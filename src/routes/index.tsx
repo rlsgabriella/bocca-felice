@@ -1,24 +1,55 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { useReveal } from "@/hooks/use-reveal";
+import { SiteNav } from "@/components/site/nav";
+import { Hero } from "@/components/site/hero";
+import {
+  Sobre,
+  Cardapio,
+  Experiencia,
+  Galeria,
+  Depoimentos,
+  Info,
+  Reservas,
+} from "@/components/site/secoes";
+import { SiteFooter, BotaoWhatsApp } from "@/components/site/footer";
+
+const TITULO = "Bocca Felice — Cucina Italiana e Pizza Napoletana em Sobral";
+const DESCRICAO =
+  "Restaurante italiano em Sobral, CE. Massas artesanais frescas, Verace Pizza Napoletana com fermentação de 48h e drinks clássicos. Reserve sua mesa.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITULO },
+      { name: "description", content: DESCRICAO },
+      { property: "og:title", content: TITULO },
+      { property: "og:description", content: DESCRICAO },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <SiteNav />
+      <main>
+        <Hero />
+        <Sobre />
+        <Cardapio />
+        <Experiencia />
+        <Galeria />
+        <Depoimentos />
+        <Info />
+        <Reservas />
+      </main>
+      <SiteFooter />
+      <BotaoWhatsApp />
+    </>
   );
 }
