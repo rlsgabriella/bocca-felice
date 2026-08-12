@@ -36,7 +36,7 @@ export function SiteFooter() {
             </span>
             <p className="mt-5 text-sm leading-relaxed text-creme/50">
               Cucina italiana artigianale e Verace Pizza Napoletana desde 2017 em Sobral, Ceará.
-              Mangia que te fa felice 🤌
+              Mangia que te fa felice
             </p>
           </div>
 
