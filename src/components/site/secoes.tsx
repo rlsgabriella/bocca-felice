@@ -1,3 +1,5 @@
+import { Wine, Wheat, Sparkles, MapPin, Phone, Instagram } from "lucide-react";
+
 import ambiente from "@/assets/ambiente.jpg";
 import forno from "@/assets/forno.jpg";
 import tagliatelle from "@/assets/tagliatelle.jpg";
@@ -156,17 +158,17 @@ export function Cardapio() {
 
 const EXPERIENCIAS = [
   {
-    icone: "🍷",
+    Icone: Wine,
     titulo: "Drinks Clássicos",
     desc: "Carta com drinks artesanais e clássicos italianos: Aperol Spritz, Negroni e muito mais.",
   },
   {
-    icone: "🍝",
+    Icone: Wheat,
     titulo: "Massas Artesanais",
     desc: "Massas produzidas diariamente na casa com farinha especial e técnicas tradicionais.",
   },
   {
-    icone: "⭐",
+    Icone: Sparkles,
     titulo: "Ambiente Exclusivo",
     desc: "Decoração intimista, iluminação calorosa e serviço atencioso e personalizado.",
   },
@@ -202,8 +204,8 @@ export function Experiencia() {
               style={{ transitionDelay: `${i * 90}ms` }}
               className="revelar rounded-3xl border border-creme/10 bg-verde-card/70 p-8 backdrop-blur-sm transition-colors hover:border-accent/40"
             >
-              <span className="flex size-12 items-center justify-center rounded-2xl bg-creme/8 text-2xl">
-                {e.icone}
+              <span className="flex size-12 items-center justify-center rounded-2xl bg-creme/8 text-accent">
+                <e.Icone className="size-6" strokeWidth={1.5} />
               </span>
               <h3 className="mt-6 font-display text-xl font-bold text-creme">{e.titulo}</h3>
               <p className="mt-3 text-sm leading-relaxed text-creme/55">{e.desc}</p>
@@ -371,15 +373,17 @@ export function Info() {
             />
           </div>
           <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
-            <li>📍 Sobral, Ceará, Brasil</li>
-            <li>
-              📱{" "}
+            <li className="flex items-center gap-2.5">
+              <MapPin className="size-4 text-accent" /> Sobral, Ceará, Brasil
+            </li>
+            <li className="flex items-center gap-2.5">
+              <Phone className="size-4 text-accent" />
               <a href="https://wa.me/55" className="text-primary hover:text-accent">
                 WhatsApp — fale conosco
               </a>
             </li>
-            <li>
-              📸{" "}
+            <li className="flex items-center gap-2.5">
+              <Instagram className="size-4 text-accent" />
               <a
                 href="https://instagram.com/boccafelicepastaepizza"
                 target="_blank"

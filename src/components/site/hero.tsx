@@ -1,3 +1,5 @@
+import { Flame, ChefHat } from "lucide-react";
+
 import heroPizza from "@/assets/hero-pizza.jpg";
 
 const SELOS = [
@@ -68,8 +70,8 @@ export function Hero() {
             className="relative aspect-4/5 w-full rounded-[2.5rem] object-cover shadow-elevado"
           />
           <div className="absolute -bottom-6 -left-4 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-elevado sm:-left-8">
-            <span className="superficie-ouro flex size-10 items-center justify-center rounded-xl text-lg">
-              🍕
+            <span className="superficie-ouro flex size-10 items-center justify-center rounded-xl text-primary">
+              <Flame className="size-5" strokeWidth={1.6} />
             </span>
             <span className="text-xs leading-tight">
               <strong className="block text-primary">Forno de pedra</strong>
@@ -77,8 +79,8 @@ export function Hero() {
             </span>
           </div>
           <div className="absolute -top-5 right-0 hidden items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-elevado sm:flex sm:-right-6">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-lg">
-              👨‍🍳
+            <span className="flex size-10 items-center justify-center rounded-xl bg-secondary text-primary">
+              <ChefHat className="size-5" strokeWidth={1.6} />
             </span>
             <span className="text-xs leading-tight">
               <strong className="block text-primary">Thyago Lopes</strong>
