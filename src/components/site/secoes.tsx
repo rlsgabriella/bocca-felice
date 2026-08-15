@@ -36,7 +36,7 @@ export function Sobre() {
         <div className="revelar relative" data-revelar>
           <img
             src={ambiente}
-            alt="Salão do Bocca Felice com iluminação calorosa"
+            alt="Fachada do Bocca Felice em Sobral à noite, com mesas na calçada"
             width={1008}
             height={1200}
             loading="lazy"
@@ -93,26 +93,26 @@ export function Sobre() {
 const PRATOS = [
   {
     img: heroPizza,
-    alt: "Pizza napoletana com manjericão fresco",
+    alt: "Spaghetti al nero com camarões e tomate confit",
     tag: "Primo Piatto",
-    nome: "Pizza Napoletana",
-    desc: "Massa artesanal fermentada 48h, assada em forno de pedra, ingredientes DOC importados.",
-    preco: "R$ 58+",
-  },
-  {
-    img: tagliatelle,
-    alt: "Tagliatelle com filé em molho cremoso",
-    tag: "Secondo",
-    nome: "Tagliatelle & Filé",
-    desc: "Massa fresca artesanal, molho cremoso de queijo, filé no ponto perfeito com ervas.",
+    nome: "Nero di Seppia",
+    desc: "Massa artesanal ao nero di seppia, camarões salteados, tomatinhos confitados e ervas frescas.",
     preco: "R$ 72",
   },
   {
+    img: tagliatelle,
+    alt: "Spaghetti alfredo com filé ao molho de frutas vermelhas",
+    tag: "Secondo",
+    nome: "Alfredo & Filé",
+    desc: "Massa fresca ao molho alfredo, grana padano e filé mignon com redução de frutas vermelhas.",
+    preco: "R$ 78",
+  },
+  {
     img: salmone,
-    alt: "Salmão grelhado com alcaparras e arroz de ervas",
+    alt: "Peixe grelhado com risoto cremoso",
     tag: "Dal Mare",
-    nome: "Salmone Capperi",
-    desc: "Salmão grelhado na perfeição, alcaparras, legumes salteados e arroz de ervas frescas.",
+    nome: "Pesce & Risotto",
+    desc: "Peixe grelhado com creme de limão siciliano, servido com risoto cremoso e tomate confit.",
     preco: "R$ 68",
   },
 ];
