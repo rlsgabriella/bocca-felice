@@ -50,6 +50,7 @@
   --color-ouro-claro: var(--ouro-claro);
   --color-creme: var(--creme);
   --color-creme-escuro: var(--creme-escuro);
+  --color-creme-muted: var(--creme-muted);
   --color-branco: var(--branco);
   --color-tinta: var(--tinta);
   --color-tinta-suave: var(--tinta-suave);
@@ -64,47 +65,45 @@
 :root {
   --radius: 0.75rem;
 
-  --verde: oklch(0.18 0.03 160);
-  --verde-medio: oklch(0.28 0.05 158);
-  --verde-card: oklch(0.23 0.04 158);
-  --ouro: oklch(0.75 0.11 88);
-  --ouro-claro: oklch(0.86 0.088 88);
-  --creme: oklch(0.951 0.015 85);
+  /* Cores de marca */
+  --verde:        oklch(0.18 0.03 160);
+  --verde-medio:  oklch(0.28 0.05 158);
+  --verde-card:   oklch(0.23 0.04 158);
+  --ouro:         oklch(0.75 0.11 88);
+  --ouro-claro:   oklch(0.86 0.088 88);
+  --creme:        oklch(0.951 0.015 85);
   --creme-escuro: oklch(0.86 0.02 85);
-  --creme-muted: oklch(0.68 0.018 85);
-  --branco: oklch(0.985 0.008 90);
-  --tinta: oklch(0.24 0.008 90);
-  --tinta-suave: oklch(0.48 0.008 90);
+  --creme-muted:  oklch(0.68 0.018 85);
+  --branco:       oklch(0.985 0.008 90);
+  --tinta:        oklch(0.24 0.008 90);
+  --tinta-suave:  oklch(0.48 0.008 90);
   --italia-verde: oklch(0.55 0.15 155);
-  --italia-verm: oklch(0.53 0.2 27);
+  --italia-verm:  oklch(0.53 0.2 27);
 
-  --background: var(--verde);
-  --foreground: var(--creme);
-  --card: var(--verde-card);
-  --card-foreground: var(--creme);
-  --popover: var(--verde-card);
-  --popover-foreground: var(--creme);
-  --primary: var(--creme);
-  --primary-foreground: var(--verde);
-  --secondary: var(--verde-medio);
+  /* Tokens semânticos */
+  --background:           var(--verde);
+  --foreground:           var(--creme);
+  --card:                 var(--verde-card);
+  --card-foreground:      var(--creme);
+  --popover:              var(--verde-card);
+  --popover-foreground:   var(--creme);
+  --primary:              var(--creme);
+  --primary-foreground:   var(--verde);
+  --secondary:            var(--verde-medio);
   --secondary-foreground: var(--creme);
-  --muted: var(--verde-medio);
-  --muted-foreground: var(--creme-muted);
-  --accent: var(--ouro);
-  --accent-foreground: var(--verde);
-  --destructive: var(--italia-verm);
+  --muted:                var(--verde-medio);
+  --muted-foreground:     var(--creme-muted);
+  --accent:               var(--ouro);
+  --accent-foreground:    var(--verde);
+  --destructive:          var(--italia-verm);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.85 0.04 88 / 0.14);
-  --input: oklch(0.85 0.04 88 / 0.18);
-  --ring: var(--ouro);
+  --border:               oklch(0.85 0.04 88 / 0.14);
+  --input:                oklch(0.85 0.04 88 / 0.18);
+  --ring:                 var(--ouro);
 
-  --gradient-ouro: linear-gradient(
-    135deg,
-    var(--ouro-claro) 0%,
-    var(--ouro) 42%,
-    var(--verde-medio) 100%
-  );
-  --gradient-verde: linear-gradient(160deg, var(--verde-medio) 0%, var(--verde-card) 100%);
+  /* Gradientes */
+  --gradient-ouro: linear-gradient(135deg, var(--ouro-claro) 0%, var(--ouro) 42%, var(--verde-medio) 100%);
+  --gradient-verde: linear-gradient(160deg, var(--verde-medio), var(--verde-card));
 }
 
 @layer base {
@@ -160,6 +159,15 @@
     opacity: 1;
     transform: none;
   }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@utility animate-float {
+  animation: floatY 3s ease-in-out infinite;
 }
 
 @utility grao {

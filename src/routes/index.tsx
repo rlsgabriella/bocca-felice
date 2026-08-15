@@ -1,18 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { useReveal } from "@/hooks/use-reveal";
-import { SiteNav } from "@/components/site/nav";
-import { Hero } from "@/components/site/hero";
-import {
-  Sobre,
-  Cardapio,
-  Experiencia,
-  Galeria,
-  Depoimentos,
-  Info,
-  Reservas,
-} from "@/components/site/secoes";
-import { SiteFooter, BotaoWhatsApp } from "@/components/site/footer";
+import { SiteNav } from "@/components/layout/nav";
+import { SiteFooter, BotaoWhatsApp } from "@/components/layout/footer";
+import { Hero } from "@/components/sections/hero";
+import { Sobre } from "@/components/sections/sobre";
+import { GaleriaCardapio } from "@/components/sections/galeria-cardapio";
+import { Depoimentos } from "@/components/sections/depoimentos";
+import { Info } from "@/components/sections/info";
+import { Reservas } from "@/components/sections/reservas";
 
 const TITULO = "Bocca Felice — Cucina Italiana e Pizza Napoletana em Sobral";
 const DESCRICAO =
@@ -41,9 +37,7 @@ function Index() {
       <main>
         <Hero />
         <Sobre />
-        <Cardapio />
-        <Experiencia />
-        <Galeria />
+        <GaleriaCardapio />
         <Depoimentos />
         <Info />
         <Reservas />
