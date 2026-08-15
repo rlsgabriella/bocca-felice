@@ -17,6 +17,17 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-32 size-[34rem] rounded-full bg-accent/12 blur-3xl"
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 flex select-none items-center justify-center overflow-hidden opacity-[0.04]"
+      >
+        <span
+          className="font-display text-[28rem] leading-none text-creme rotate-[-12deg]"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          BF
+        </span>
+      </div>
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:pb-28">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-secondary px-4 py-1.5 text-[0.7rem] tracking-[0.22em] text-primary uppercase">
