@@ -418,7 +418,7 @@ export function Reservas() {
             href="https://wa.me/55"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-creme px-7 py-3.5 text-sm font-semibold text-primary transition-transform hover:-translate-y-0.5"
+            className="rounded-full bg-creme px-7 py-3.5 text-sm font-semibold text-verde transition-transform hover:-translate-y-0.5"
           >
             Reservar Mesa
           </a>

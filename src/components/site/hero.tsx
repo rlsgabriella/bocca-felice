@@ -17,6 +17,17 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute -top-40 -right-32 size-[34rem] rounded-full bg-accent/12 blur-3xl"
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 flex select-none items-center justify-center overflow-hidden opacity-[0.04]"
+      >
+        <span
+          className="font-display text-[28rem] leading-none text-creme rotate-[-12deg]"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          BF
+        </span>
+      </div>
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:pb-28">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-secondary px-4 py-1.5 text-[0.7rem] tracking-[0.22em] text-primary uppercase">
@@ -25,15 +36,13 @@ export function Hero() {
           </span>
 
           <h1 className="mt-7 font-display text-5xl leading-[1.05] font-bold tracking-tight text-primary sm:text-6xl lg:text-7xl">
-            Uma cozinha que
-            <em className="mt-1 block font-script text-6xl font-normal text-accent not-italic sm:text-7xl lg:text-8xl">
-              desperta felicidade
-            </em>
+            Desde 2017 trazendo a{" "}
+            <em className="font-script text-accent not-italic">Itália</em> para Sobral
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Cucina italiana artigianale e Verace Pizza Napoletana. Massas frescas produzidas todos
-            os dias e fermentação lenta de 48 horas, sob o comando do chef Thyago Lopes.
+            Massas artesanais frescas, Verace Pizza Napoletana com fermentação de 48h e um
+            ambiente que remete às cantinas de Nápoles — no coração de Sobral.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
