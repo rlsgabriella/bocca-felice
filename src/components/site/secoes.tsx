@@ -234,10 +234,12 @@ export function Experiencia() {
 
 const GALERIA = [
   { img: ambiente, cap: "Nosso Ambiente", span: "md:col-span-2 md:row-span-2" },
-  { img: heroPizza, cap: "Pizzas", span: "" },
-  { img: drinks, cap: "Drinks", span: "" },
-  { img: tagliatelle, cap: "Massas", span: "" },
-  { img: sobremesa, cap: "Sobremesas", span: "" },
+  { img: nero, cap: "Massas", span: "" },
+  { img: drinks, cap: "Mesa & Vinhos", span: "" },
+  { img: ravioli, cap: "Ravioli", span: "" },
+  { img: sobremesa, cap: "Tiramisù", span: "" },
+  { img: parfait, cap: "Sobremesas", span: "" },
+  { img: chef, cap: "Chef Thyago", span: "" },
 ];
 
 export function Galeria() {
