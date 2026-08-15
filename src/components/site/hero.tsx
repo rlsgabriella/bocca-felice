@@ -75,7 +75,7 @@ export function Hero() {
           <div className="absolute -inset-6 rounded-[3rem] bg-accent/10 blur-2xl" aria-hidden />
           <img
             src={heroPizza}
-            alt="Pizza napoletana artesanal do Bocca Felice"
+            alt="Spaghetti al nero com camarões do Bocca Felice"
             width={1200}
             height={1408}
             className="relative aspect-4/5 w-full rounded-[2.5rem] object-cover shadow-elevado"
