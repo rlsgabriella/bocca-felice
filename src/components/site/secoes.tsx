@@ -1,12 +1,27 @@
 import { Wine, Wheat, Sparkles, MapPin, Phone, Instagram } from "lucide-react";
 
-import ambiente from "@/assets/ambiente.jpg";
-import forno from "@/assets/forno.jpg";
-import tagliatelle from "@/assets/tagliatelle.jpg";
-import salmone from "@/assets/salmone.jpg";
-import heroPizza from "@/assets/hero-pizza.jpg";
-import drinks from "@/assets/drinks.jpg";
-import sobremesa from "@/assets/sobremesa.jpg";
+import fachadaAsset from "@/assets/restaurante-fachada.jpeg.asset.json";
+import mesaVinhoAsset from "@/assets/mesa-vinho.jpeg.asset.json";
+import alfredoAsset from "@/assets/spaghetti-alfredo.jpeg.asset.json";
+import frutosAsset from "@/assets/frutos-do-mar.jpeg.asset.json";
+import camaraoAsset from "@/assets/camarao-creme.jpeg.asset.json";
+import raviolAsset from "@/assets/ravioli.jpeg.asset.json";
+import tiramisuAsset from "@/assets/tiramisu.jpeg.asset.json";
+import parfaitAsset from "@/assets/parfait.jpeg.asset.json";
+import chefAsset from "@/assets/chef-thyago.jpeg.asset.json";
+import neroAsset from "@/assets/spaghetti-nero.jpeg.asset.json";
+
+const ambiente = fachadaAsset.url;
+const forno = mesaVinhoAsset.url;
+const tagliatelle = alfredoAsset.url;
+const salmone = frutosAsset.url;
+const heroPizza = camaraoAsset.url;
+const drinks = mesaVinhoAsset.url;
+const sobremesa = tiramisuAsset.url;
+const ravioli = raviolAsset.url;
+const parfait = parfaitAsset.url;
+const chef = chefAsset.url;
+const nero = neroAsset.url;
 
 function Eyebrow({ children }: { children: string }) {
   return (

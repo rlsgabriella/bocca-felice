@@ -1,6 +1,8 @@
 import { Flame, ChefHat } from "lucide-react";
 
-import heroPizza from "@/assets/hero-pizza.jpg";
+import heroAsset from "@/assets/camarao-creme.jpeg.asset.json";
+
+const heroPizza = heroAsset.url;
 
 const SELOS = [
   "Cucina Artigianale",
