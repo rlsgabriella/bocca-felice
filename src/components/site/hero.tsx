@@ -36,15 +36,13 @@ export function Hero() {
           </span>
 
           <h1 className="mt-7 font-display text-5xl leading-[1.05] font-bold tracking-tight text-primary sm:text-6xl lg:text-7xl">
-            Uma cozinha que
-            <em className="mt-1 block font-script text-6xl font-normal text-accent not-italic sm:text-7xl lg:text-8xl">
-              desperta felicidade
-            </em>
+            Desde 2017 trazendo a{" "}
+            <em className="font-script text-accent not-italic">Itália</em> para Sobral
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground">
-            Cucina italiana artigianale e Verace Pizza Napoletana. Massas frescas produzidas todos
-            os dias e fermentação lenta de 48 horas, sob o comando do chef Thyago Lopes.
+            Massas artesanais frescas, Verace Pizza Napoletana com fermentação de 48h e um
+            ambiente que remete às cantinas de Nápoles — no coração de Sobral.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
