@@ -1,12 +1,27 @@
 import { Wine, Wheat, Sparkles, MapPin, Phone, Instagram } from "lucide-react";
 
-import ambiente from "@/assets/ambiente.jpg";
-import forno from "@/assets/forno.jpg";
-import tagliatelle from "@/assets/tagliatelle.jpg";
-import salmone from "@/assets/salmone.jpg";
-import heroPizza from "@/assets/hero-pizza.jpg";
-import drinks from "@/assets/drinks.jpg";
-import sobremesa from "@/assets/sobremesa.jpg";
+import fachadaAsset from "@/assets/restaurante-fachada.jpeg.asset.json";
+import mesaVinhoAsset from "@/assets/mesa-vinho.jpeg.asset.json";
+import alfredoAsset from "@/assets/spaghetti-alfredo.jpeg.asset.json";
+import frutosAsset from "@/assets/frutos-do-mar.jpeg.asset.json";
+import camaraoAsset from "@/assets/camarao-creme.jpeg.asset.json";
+import raviolAsset from "@/assets/ravioli.jpeg.asset.json";
+import tiramisuAsset from "@/assets/tiramisu.jpeg.asset.json";
+import parfaitAsset from "@/assets/parfait.jpeg.asset.json";
+import chefAsset from "@/assets/chef-thyago.jpeg.asset.json";
+import neroAsset from "@/assets/spaghetti-nero.jpeg.asset.json";
+
+const ambiente = fachadaAsset.url;
+const forno = mesaVinhoAsset.url;
+const tagliatelle = alfredoAsset.url;
+const salmone = frutosAsset.url;
+const heroPizza = camaraoAsset.url;
+const drinks = mesaVinhoAsset.url;
+const sobremesa = tiramisuAsset.url;
+const ravioli = raviolAsset.url;
+const parfait = parfaitAsset.url;
+const chef = chefAsset.url;
+const nero = neroAsset.url;
 
 function Eyebrow({ children }: { children: string }) {
   return (
@@ -21,7 +36,7 @@ export function Sobre() {
         <div className="revelar relative" data-revelar>
           <img
             src={ambiente}
-            alt="Salão do Bocca Felice com iluminação calorosa"
+            alt="Fachada do Bocca Felice em Sobral à noite, com mesas na calçada"
             width={1008}
             height={1200}
             loading="lazy"
@@ -78,26 +93,26 @@ export function Sobre() {
 const PRATOS = [
   {
     img: heroPizza,
-    alt: "Pizza napoletana com manjericão fresco",
+    alt: "Spaghetti al nero com camarões e tomate confit",
     tag: "Primo Piatto",
-    nome: "Pizza Napoletana",
-    desc: "Massa artesanal fermentada 48h, assada em forno de pedra, ingredientes DOC importados.",
-    preco: "R$ 58+",
-  },
-  {
-    img: tagliatelle,
-    alt: "Tagliatelle com filé em molho cremoso",
-    tag: "Secondo",
-    nome: "Tagliatelle & Filé",
-    desc: "Massa fresca artesanal, molho cremoso de queijo, filé no ponto perfeito com ervas.",
+    nome: "Nero di Seppia",
+    desc: "Massa artesanal ao nero di seppia, camarões salteados, tomatinhos confitados e ervas frescas.",
     preco: "R$ 72",
   },
   {
+    img: tagliatelle,
+    alt: "Spaghetti alfredo com filé ao molho de frutas vermelhas",
+    tag: "Secondo",
+    nome: "Alfredo & Filé",
+    desc: "Massa fresca ao molho alfredo, grana padano e filé mignon com redução de frutas vermelhas.",
+    preco: "R$ 78",
+  },
+  {
     img: salmone,
-    alt: "Salmão grelhado com alcaparras e arroz de ervas",
+    alt: "Peixe grelhado com risoto cremoso",
     tag: "Dal Mare",
-    nome: "Salmone Capperi",
-    desc: "Salmão grelhado na perfeição, alcaparras, legumes salteados e arroz de ervas frescas.",
+    nome: "Pesce & Risotto",
+    desc: "Peixe grelhado com creme de limão siciliano, servido com risoto cremoso e tomate confit.",
     preco: "R$ 68",
   },
 ];
@@ -219,10 +234,12 @@ export function Experiencia() {
 
 const GALERIA = [
   { img: ambiente, cap: "Nosso Ambiente", span: "md:col-span-2 md:row-span-2" },
-  { img: heroPizza, cap: "Pizzas", span: "" },
-  { img: drinks, cap: "Drinks", span: "" },
-  { img: tagliatelle, cap: "Massas", span: "" },
-  { img: sobremesa, cap: "Sobremesas", span: "" },
+  { img: nero, cap: "Massas", span: "" },
+  { img: drinks, cap: "Mesa & Vinhos", span: "" },
+  { img: ravioli, cap: "Ravioli", span: "" },
+  { img: sobremesa, cap: "Tiramisù", span: "" },
+  { img: parfait, cap: "Sobremesas", span: "" },
+  { img: chef, cap: "Chef Thyago", span: "" },
 ];
 
 export function Galeria() {
