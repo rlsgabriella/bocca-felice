@@ -9,11 +9,11 @@ function Eyebrow({ children }: { children: string }) {
 
 export function Info() {
   return (
-    <section id="info" className="bg-verde-medio py-24 lg:py-32">
+    <section id="info" className="bg-verde-medio py-12 lg:py-24">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
         <div className="revelar" data-revelar>
           <Eyebrow>Horários</Eyebrow>
-          <h2 className="mt-4 font-display text-4xl font-bold text-primary lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-5xl">
             Horários de
             <br />
             <em className="font-script text-accent not-italic">funcionamento</em>
@@ -35,7 +35,7 @@ export function Info() {
 
         <div className="revelar" data-revelar>
           <Eyebrow>Localização</Eyebrow>
-          <h2 className="mt-4 font-display text-4xl font-bold text-primary lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-5xl">
             Como nos <em className="font-script text-accent not-italic">encontrar</em>
           </h2>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-verde-card">
@@ -43,7 +43,7 @@ export function Info() {
               title="Mapa — Bocca Felice, Sobral, Ceará"
               src={CONTATO.mapEmbed}
               loading="lazy"
-              className="h-56 w-full grayscale-[0.3]"
+              className="h-44 w-full grayscale-[0.3] lg:h-56"
             />
           </div>
           <ul className="mt-6 space-y-3 text-sm text-muted-foreground">

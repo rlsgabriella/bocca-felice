@@ -32,11 +32,11 @@ export function SiteNav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ${
         rolou
-          ? "border-border bg-background/95 py-3 shadow-suave backdrop-blur-xl"
-          : "border-transparent bg-transparent py-5"
+          ? "border-border bg-background/95 shadow-suave backdrop-blur-xl"
+          : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-[60px] max-w-7xl items-center justify-between px-5 lg:h-[72px] lg:px-10">
         {/* Logo */}
         <a href="#hero" aria-label="Bocca Felice — início" className="flex items-center gap-3">
           <span className="superficie-ouro flex size-9 items-center justify-center rounded-full font-display text-sm font-bold text-verde">
@@ -79,12 +79,12 @@ export function SiteNav() {
           </a>
         </div>
 
-        {/* Hamburguer mobile */}
+        {/* Hamburguer — 44×44px touch target */}
         <button
           type="button"
           aria-label="Abrir menu"
           onClick={() => setAberto((v) => !v)}
-          className="rounded-full border border-border p-2 text-primary lg:hidden"
+          className="flex size-11 items-center justify-center rounded-full border border-border text-primary lg:hidden"
         >
           {aberto ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -92,8 +92,8 @@ export function SiteNav() {
 
       {/* Menu mobile */}
       {aberto && (
-        <div className="border-t border-border bg-background/98 px-6 py-6 backdrop-blur-xl lg:hidden">
-          <nav className="flex flex-col gap-4">
+        <div className="border-t border-border bg-background/98 px-5 py-4 backdrop-blur-xl lg:hidden">
+          <nav className="flex flex-col">
             {LINKS.map((l) => (
               <a
                 key={l.label}
@@ -101,7 +101,7 @@ export function SiteNav() {
                 target={l.external ? "_blank" : undefined}
                 rel={l.external ? "noreferrer" : undefined}
                 onClick={() => !l.external && setAberto(false)}
-                className="text-sm text-muted-foreground hover:text-accent"
+                className="flex min-h-[44px] items-center text-sm text-muted-foreground hover:text-accent"
               >
                 {l.label}
               </a>
@@ -111,7 +111,7 @@ export function SiteNav() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setAberto(false)}
-              className="mt-2 rounded-full bg-ouro px-5 py-2.5 text-center text-sm font-semibold text-verde"
+              className="mt-3 flex min-h-[44px] items-center justify-center rounded-full bg-ouro px-5 text-sm font-semibold text-verde"
             >
               Peça pelo WhatsApp
             </a>

@@ -65,6 +65,7 @@ function useSlidesVisiveis() {
 
 export function GaleriaCardapio() {
   const slidesVisiveis = useSlidesVisiveis();
+  const isMobile = slidesVisiveis === 1;
   const maxIndex = PRATOS.length - slidesVisiveis;
 
   const [current, setCurrent] = useState(0);
@@ -72,7 +73,6 @@ export function GaleriaCardapio() {
   const [containerHovered, setContainerHovered] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Garante que o índice não ultrapasse o máximo quando slidesVisiveis muda
   useEffect(() => {
     setCurrent((c) => Math.min(c, Math.max(0, PRATOS.length - slidesVisiveis)));
   }, [slidesVisiveis]);
@@ -91,10 +91,14 @@ export function GaleriaCardapio() {
   const slideWidth = `calc(100% / ${slidesVisiveis})`;
   const translateX = `translateX(-${current * (100 / slidesVisiveis)}%)`;
 
+  const sectionPadding = isMobile ? "3rem 0" : "5rem 0 4rem";
+  const headerPadding = isMobile ? "0 1.25rem" : "0 2rem";
+  const imgHeight = isMobile ? 220 : 260;
+
   return (
-    <section id="galeria" style={{ background: "var(--verde)", padding: "5rem 0 4rem" }}>
+    <section id="galeria" style={{ background: "var(--verde)", padding: sectionPadding }}>
       {/* HEADER */}
-      <div style={{ textAlign: "center", padding: "0 2rem", marginBottom: "3rem" }}>
+      <div style={{ textAlign: "center", padding: headerPadding, marginBottom: isMobile ? "2rem" : "3rem" }}>
         <span
           style={{
             color: "var(--ouro)",
@@ -110,7 +114,7 @@ export function GaleriaCardapio() {
           className="font-display"
           style={{
             color: "var(--creme)",
-            fontSize: "clamp(2rem, 4vw, 2.8rem)",
+            fontSize: "clamp(1.75rem, 6vw, 2.8rem)",
             fontWeight: 700,
             marginTop: "0.5rem",
           }}
@@ -166,8 +170,8 @@ export function GaleriaCardapio() {
                     height: "100%",
                   }}
                 >
-                  {/* Imagem */}
-                  <div style={{ height: 260, overflow: "hidden" }}>
+                  {/* Imagem — menor no mobile */}
+                  <div style={{ height: imgHeight, overflow: "hidden" }}>
                     <img
                       src={prato.img}
                       alt={prato.nome}
@@ -265,7 +269,7 @@ export function GaleriaCardapio() {
           </div>
         </div>
 
-        {/* Seta esquerda */}
+        {/* Seta esquerda — oculta no mobile */}
         <button
           type="button"
           onClick={goPrev}
@@ -281,7 +285,7 @@ export function GaleriaCardapio() {
             background: "var(--verde-card)",
             border: "1px solid var(--border)",
             color: "var(--ouro)",
-            display: "flex",
+            display: isMobile ? "none" : "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
@@ -294,7 +298,7 @@ export function GaleriaCardapio() {
           ‹
         </button>
 
-        {/* Seta direita */}
+        {/* Seta direita — oculta no mobile */}
         <button
           type="button"
           onClick={goNext}
@@ -310,7 +314,7 @@ export function GaleriaCardapio() {
             background: "var(--verde-card)",
             border: "1px solid var(--border)",
             color: "var(--ouro)",
-            display: "flex",
+            display: isMobile ? "none" : "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
@@ -324,13 +328,14 @@ export function GaleriaCardapio() {
         </button>
       </div>
 
-      {/* DOTS */}
+      {/* DOTS — área de toque 32×32px */}
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          gap: "0.5rem",
-          marginTop: "2.5rem",
+          alignItems: "center",
+          gap: "0.25rem",
+          marginTop: "2rem",
         }}
       >
         {Array.from({ length: maxIndex + 1 }, (_, i) => (
@@ -340,21 +345,33 @@ export function GaleriaCardapio() {
             onClick={() => setCurrent(i)}
             aria-label={`Ir para posição ${i + 1}`}
             style={{
-              width: i === current ? 24 : 8,
-              height: 8,
-              borderRadius: i === current ? 4 : "50%",
-              background: i === current ? "var(--ouro)" : "oklch(0.75 0.11 88 / 0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 32,
+              height: 32,
+              background: "transparent",
               border: "none",
               cursor: "pointer",
               padding: 0,
-              transition: "width 0.3s ease, opacity 0.3s ease",
             }}
-          />
+          >
+            <span
+              style={{
+                display: "block",
+                width: i === current ? 24 : 8,
+                height: 8,
+                borderRadius: i === current ? 4 : "50%",
+                background: i === current ? "var(--ouro)" : "oklch(0.75 0.11 88 / 0.3)",
+                transition: "width 0.3s ease",
+              }}
+            />
+          </button>
         ))}
       </div>
 
-      {/* CTA */}
-      <div style={{ textAlign: "center", marginTop: "3rem", padding: "0 2rem" }}>
+      {/* CTA — largura total no mobile */}
+      <div style={{ textAlign: "center", marginTop: "2.5rem", padding: headerPadding }}>
         <a
           href={LINK_CARDAPIO}
           target="_blank"
@@ -362,7 +379,9 @@ export function GaleriaCardapio() {
           style={{
             display: "inline-flex",
             alignItems: "center",
+            justifyContent: "center",
             gap: "0.5rem",
+            width: isMobile ? "100%" : "auto",
             background: "var(--ouro)",
             color: "var(--verde)",
             padding: "0.9rem 2.5rem",
@@ -372,6 +391,7 @@ export function GaleriaCardapio() {
             textDecoration: "none",
             transition: "background 0.25s, transform 0.2s",
             boxShadow: "0 4px 20px rgba(201,168,76,0.3)",
+            boxSizing: "border-box",
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.background = "var(--ouro-claro)";

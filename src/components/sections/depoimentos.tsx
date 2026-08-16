@@ -13,7 +13,7 @@ type Depoimento = (typeof depoimentos)[number];
 
 function Card({ d }: { d: Depoimento }) {
   return (
-    <blockquote className="flex flex-1 flex-col rounded-3xl border border-border bg-card p-8 shadow-suave">
+    <blockquote className="flex flex-1 flex-col rounded-3xl border border-border bg-card p-5 shadow-suave lg:p-8">
       <span
         className="font-display text-5xl leading-none"
         style={{ color: "oklch(0.75 0.11 88 / 0.25)" }}
@@ -81,17 +81,17 @@ export function Depoimentos() {
   }, [paused, next]);
 
   return (
-    <section id="depoimentos" className="bg-background py-24 lg:py-32">
+    <section id="depoimentos" className="bg-background py-12 lg:py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="revelar text-center" data-revelar>
           <Eyebrow>Testimonianze</Eyebrow>
-          <h2 className="mt-4 font-display text-4xl font-bold text-primary lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-5xl">
             O que nossos <em className="font-script text-accent not-italic">clientes</em> dizem
           </h2>
         </div>
 
         <div
-          className="relative mt-14"
+          className="relative mt-8 lg:mt-14"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
@@ -112,12 +112,12 @@ export function Depoimentos() {
             </div>
           </div>
 
-          {/* Setas */}
+          {/* Setas — visíveis apenas md+ */}
           <button
             type="button"
             onClick={prev}
             aria-label="Depoimento anterior"
-            className="absolute -left-5 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full border border-border bg-card shadow-suave transition-all hover:-translate-x-0.5 hover:shadow-elevado lg:-left-6"
+            className="absolute -left-5 top-1/2 -translate-y-1/2 hidden size-10 items-center justify-center rounded-full border border-border bg-card shadow-suave transition-all hover:-translate-x-0.5 hover:shadow-elevado md:flex lg:-left-6"
           >
             <ChevronLeft className="size-5 text-accent" />
           </button>
@@ -125,27 +125,29 @@ export function Depoimentos() {
             type="button"
             onClick={next}
             aria-label="Próximo depoimento"
-            className="absolute -right-5 top-1/2 -translate-y-1/2 flex size-10 items-center justify-center rounded-full border border-border bg-card shadow-suave transition-all hover:translate-x-0.5 hover:shadow-elevado lg:-right-6"
+            className="absolute -right-5 top-1/2 -translate-y-1/2 hidden size-10 items-center justify-center rounded-full border border-border bg-card shadow-suave transition-all hover:translate-x-0.5 hover:shadow-elevado md:flex lg:-right-6"
           >
             <ChevronRight className="size-5 text-accent" />
           </button>
         </div>
 
-        {/* Dots */}
-        <div className="mt-8 flex justify-center gap-2">
+        {/* Dots — área de toque 32×32px */}
+        <div className="mt-8 flex items-center justify-center gap-1">
           {Array.from({ length: pageCount }, (_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setPage(i)}
               aria-label={`Ir para página ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === page
-                  ? "w-6 bg-accent"
-                  : "w-2 hover:bg-accent/50"
-              }`}
-              style={i !== page ? { background: "oklch(0.75 0.11 88 / 0.3)" } : undefined}
-            />
+              className="flex min-h-[32px] min-w-[32px] items-center justify-center"
+            >
+              <span
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === page ? "w-6 bg-accent" : "w-2"
+                }`}
+                style={i !== page ? { background: "oklch(0.75 0.11 88 / 0.3)" } : undefined}
+              />
+            </button>
           ))}
         </div>
       </div>

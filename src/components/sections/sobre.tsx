@@ -11,7 +11,7 @@ function VideoPlayer() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="mt-20">
+    <div className="mt-12 lg:mt-20">
       <div className="text-center">
         <Eyebrow>Nos bastidores</Eyebrow>
         <h3 className="mt-3 font-display text-3xl font-bold text-primary lg:text-4xl">
@@ -146,7 +146,7 @@ function VideoPlayer() {
 
 export function Sobre() {
   return (
-    <section id="sobre" className="bg-verde-medio py-24 lg:py-32">
+    <section id="sobre" className="bg-verde-medio py-12 lg:py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         {/* Grid 2 colunas */}
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
@@ -160,7 +160,8 @@ export function Sobre() {
               loading="lazy"
               className="aspect-4/5 w-full rounded-[1.5rem] object-cover shadow-elevado"
             />
-            <div className="absolute -right-4 -bottom-6 rounded-2xl border border-ouro bg-verde px-5 py-4 text-center shadow-elevado">
+            {/* Badge — contido dentro da imagem no mobile */}
+            <div className="absolute right-2 -bottom-3 rounded-2xl border border-ouro bg-verde px-5 py-4 text-center shadow-elevado lg:-right-4 lg:-bottom-6">
               <strong className="block font-display text-2xl text-ouro">2017</strong>
               <span className="text-[0.65rem] tracking-[0.2em] text-creme/70 uppercase">
                 Dal · Fundação
@@ -171,7 +172,7 @@ export function Sobre() {
           {/* Texto */}
           <div className="revelar" data-revelar>
             <Eyebrow>Nossa História</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl leading-tight font-bold text-primary lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-primary lg:text-5xl">
               Uma cozinha com alma{" "}
               <em className="font-script text-accent not-italic">italiana</em>
             </h2>

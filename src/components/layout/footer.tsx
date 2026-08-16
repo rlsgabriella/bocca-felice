@@ -28,7 +28,7 @@ const COLUNAS = [
 export function SiteFooter() {
   return (
     <footer
-      className="border-t border-border px-6 pt-20 pb-10 lg:px-10"
+      className="border-t border-border px-6 pt-12 pb-8 lg:px-10 lg:pt-20 lg:pb-10"
       style={{ background: "oklch(0.12 0.025 160)" }}
     >
       <div className="mx-auto max-w-6xl">
@@ -122,7 +122,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-8">
+        <div className="flex flex-col items-center gap-4 pt-8 text-center md:flex-row md:justify-between md:text-start">
           <span
             className="text-xs text-creme"
             style={{ opacity: 0.4 }}
@@ -147,10 +147,10 @@ export function BotaoWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed right-6 bottom-6 z-50 flex size-14 items-center justify-center rounded-full text-white shadow-elevado transition-transform hover:scale-110"
+      className="fixed right-4 bottom-4 z-50 flex size-[50px] items-center justify-center rounded-full text-white shadow-elevado transition-transform hover:scale-110 lg:right-6 lg:bottom-6 lg:size-14"
       style={{ background: "#25d366" }}
     >
-      <MessageCircle className="size-6" />
+      <MessageCircle className="size-5 lg:size-6" />
     </a>
   );
 }
