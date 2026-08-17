@@ -1,5 +1,6 @@
 import { MapPin, Phone, Instagram, Mail } from "lucide-react";
 import { HORARIOS, CONTATO } from "@/data/info";
+import { useStatusAberto } from "@/hooks/use-status-aberto";
 
 function Eyebrow({ children }: { children: string }) {
   return (
@@ -7,18 +8,37 @@ function Eyebrow({ children }: { children: string }) {
   );
 }
 
+function ChipStatus() {
+  const status = useStatusAberto();
+  if (!status) return null;
+  return (
+    <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-verde-card px-3.5 py-2 text-xs text-creme">
+      <span
+        className="size-2 rounded-full"
+        style={{
+          background: status.aberto
+            ? "var(--color-italia-verde)"
+            : "var(--color-italia-verm)",
+        }}
+      />
+      {status.texto}
+    </span>
+  );
+}
+
 export function Info() {
   return (
-    <section id="info" className="bg-verde-medio py-12 lg:py-24">
+    <section id="info" className="bg-verde-medio py-16 lg:py-28">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
         <div className="revelar" data-revelar>
           <Eyebrow>Horários</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
             Horários de
             <br />
             <em className="font-script text-accent not-italic">funcionamento</em>
           </h2>
-          <dl className="mt-8">
+          <ChipStatus />
+          <dl className="mt-6">
             {HORARIOS.map(({ dia, hora, fechado }) => (
               <div
                 key={dia}
