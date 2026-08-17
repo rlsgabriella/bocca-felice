@@ -1,59 +1,59 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { UtensilsCrossed } from "lucide-react";
 import { useSwipe } from "@/hooks/use-swipe";
-import spaghettiNero from "@/assets/images/spaghetti-nero.jpeg";
-import spaghettiAlfredo from "@/assets/images/spaghetti-alfredo.jpeg";
-import frutosDomar from "@/assets/images/frutos-do-mar.jpeg";
-import camaraoCreme from "@/assets/images/camarao-creme.jpeg";
-import ravioli from "@/assets/images/ravioli.jpeg";
-import tiramisu from "@/assets/images/tiramisu.jpeg";
-import mesaVinho from "@/assets/images/mesa-vinho.jpeg";
+import gamberiParmegi from "@/assets/images/gamberi-parmegi-1.jpeg";
+import filettoAlfredo from "@/assets/images/filetto-alfredo-1.jpeg";
+import sacotine from "@/assets/images/sacotine-carne-sol.jpeg";
+import risottoSalmone from "@/assets/images/risotto-salmone.jpeg";
+import gamberiNero from "@/assets/images/gamberi-nero-1.jpeg";
+import tiramisu from "@/assets/images/tiramisu-1.jpeg";
+import fruttiRossi from "@/assets/images/frutti-rossi-1.jpg";
 
 const LINK_CARDAPIO =
   "https://boccafelice.saipos.com/bocca-felice-pasta-e-pizza/table/dtsxxtl";
 
 const PRATOS = [
   {
-    img: spaghettiNero,
-    tag: "Primo Piatto",
-    nome: "Nero di Seppia",
-    desc: "Massa artesanal ao nero di seppia, camarões salteados, tomatinhos confitados e ervas frescas.",
+    img: gamberiParmegi,
+    tag: "Massas",
+    nome: "Gamberi Parmegi",
+    desc: "Camarões selados, servidos com fettuccine ao molho de sua escolha (bechamel ou pomodoro), finalizado com parmesão vigor e salsinha.",
   },
   {
-    img: spaghettiAlfredo,
-    tag: "Secondo",
-    nome: "Alfredo & Filé",
-    desc: "Massa fresca ao molho alfredo, grana padano e filé mignon com redução de frutas vermelhas.",
+    img: filettoAlfredo,
+    tag: "Massas",
+    nome: "Filetto Alfredo",
+    desc: "Medalhões de filé mignon com redução de vinho tinto, fettuccine estilo Alfredo, fonduta de bechamel e parmesão vigor.",
   },
   {
-    img: frutosDomar,
-    tag: "Dal Mare",
-    nome: "Pesce & Risotto",
-    desc: "Peixe grelhado com creme de limão siciliano, servido com risoto cremoso e tomate confit.",
+    img: sacotine,
+    tag: "Massas",
+    nome: "Sacotine de Carne do Sol Caramelizada",
+    desc: "Massa artesanal recheada com carne do sol, queijo coalho e cebola caramelizada, sobre fonduta de parmesão, molho trufado e azeite de ervas.",
   },
   {
-    img: camaraoCreme,
-    tag: "Frutti di Mare",
-    nome: "Gamberetti al Crème",
-    desc: "Fettuccine artesanal, camarões ao molho cremoso, parmesão e ervas frescas.",
+    img: risottoSalmone,
+    tag: "Frutos do Mar",
+    nome: "Risotto Salmone Siciliano",
+    desc: "Risoto flambado ao vinho branco, emulsão de parmesão e manteiga com toque de limão siciliano, salmão em posta selado no azeite e crispy de alho poró.",
   },
   {
-    img: ravioli,
-    tag: "Pasta Ripiena",
-    nome: "Ravioli Aperto",
-    desc: "Ravioli aberto ao molho branco, ragù artesanal, tomate cereja e microgreens.",
+    img: gamberiNero,
+    tag: "Especial",
+    nome: "Gamberi Nero di Sépia",
+    desc: "Camarões selados e flambados ao vinho branco, spaghetti nero di sépia, toque de bechamel e parmesão, tomates cerejas confeitados.",
   },
   {
     img: tiramisu,
-    tag: "Dolci",
-    nome: "Tiramisù Classico",
-    desc: "Receita original com mascarpone, savoiardi, café espresso e cacau belga.",
+    tag: "Sobremesas",
+    nome: "Tiramisù",
+    desc: "Camadas de creme de mascarpone e biscoito embebido em café e marsala, finalizado com cacau em pó.",
   },
   {
-    img: mesaVinho,
-    tag: "Ambiente",
-    nome: "Mesa & Vinho",
-    desc: "Uma boa noite começa com uma mesa bem posta e um vinho escolhido a dedo.",
+    img: fruttiRossi,
+    tag: "Sobremesas",
+    nome: "Frutti Rossi in Crema",
+    desc: "Sobremesa em taça com camadas de creme e calda de frutas vermelhas (framboesa, amora, mirtilo), guarnecida com frutas frescas.",
   },
 ];
 
@@ -103,7 +103,6 @@ export function GaleriaCardapio() {
 
   const sectionPadding = isMobile ? "4rem 0" : "7rem 0";
   const headerPadding = isMobile ? "0 1.25rem" : "0 2rem";
-  const imgHeight = isMobile ? 220 : 260;
 
   return (
     <section id="galeria" style={{ background: "var(--verde)", padding: sectionPadding }}>
@@ -167,15 +166,16 @@ export function GaleriaCardapio() {
           <div
             style={{
               display: "flex",
+              alignItems: "stretch",
               transition: isDragging ? "none" : "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
               transform: isDragging
                 ? `translateX(calc(-${current * (100 / slidesVisiveis)}% + ${deltaX}px))`
                 : translateX,
             }}
           >
-            {PRATOS.map((prato) => (
+            {PRATOS.map((prato, i) => (
               <div
-                key={prato.nome}
+                key={i}
                 style={{
                   flexShrink: 0,
                   width: slideWidth,
@@ -189,32 +189,30 @@ export function GaleriaCardapio() {
                     borderRadius: "1rem",
                     overflow: "hidden",
                     border: "1px solid var(--border)",
+                    display: "flex",
+                    flexDirection: "column",
                     height: "100%",
                   }}
                 >
-                  {/* Imagem — menor no mobile */}
-                  <div style={{ height: imgHeight, overflow: "hidden" }}>
+                  {/* Imagem */}
+                  <div style={{ height: "260px", overflow: "hidden", flexShrink: 0 }}>
                     <img
                       src={prato.img}
                       alt={prato.nome}
-                      loading="lazy"
                       style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
+                        objectPosition: "center",
                         transition: "transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
                       }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.transform = "scale(1.06)";
-                      }}
-                      onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.transform = "scale(1)";
-                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.06)"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
                     />
                   </div>
 
                   {/* Corpo do card */}
-                  <div style={{ padding: "1.5rem" }}>
+                  <div style={{ display: "flex", flexDirection: "column", flex: 1, padding: "1.5rem" }}>
                     <span
                       style={{
                         fontSize: "0.65rem",
@@ -246,7 +244,7 @@ export function GaleriaCardapio() {
                         fontSize: "0.88rem",
                         color: "var(--creme-muted)",
                         lineHeight: 1.65,
-                        marginBottom: "1.5rem",
+                        flex: 1,
                       }}
                     >
                       {prato.desc}
@@ -255,8 +253,9 @@ export function GaleriaCardapio() {
                     {/* Link */}
                     <div
                       style={{
-                        borderTop: "1px solid var(--border)",
+                        marginTop: "auto",
                         paddingTop: "1rem",
+                        borderTop: "1px solid var(--border)",
                         display: "flex",
                         justifyContent: "flex-end",
                       }}
