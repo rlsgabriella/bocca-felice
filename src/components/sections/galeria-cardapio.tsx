@@ -219,6 +219,8 @@ export function GaleriaCardapio() {
                         color: "var(--ouro)",
                         display: "block",
                         marginBottom: "0.5rem",
+                        fontFamily: "var(--font-display)",
+                        fontStyle: "italic",
                       }}
                     >
                       {prato.tag}

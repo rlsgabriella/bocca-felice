@@ -6,7 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 function Eyebrow({ children }: { children: string }) {
   return (
-    <span className="text-[0.7rem] tracking-[0.28em] text-accent uppercase">{children}</span>
+    <span className="font-display italic text-[0.7rem] tracking-[0.28em] text-accent uppercase">{children}</span>
   );
 }
 
@@ -14,21 +14,34 @@ type Depoimento = (typeof depoimentos)[number];
 
 function Card({ d }: { d: Depoimento }) {
   return (
-    <blockquote className="flex flex-1 flex-col rounded-3xl border border-border bg-card p-5 shadow-suave lg:p-8">
+    <blockquote
+      className="flex flex-1 flex-col rounded-3xl p-5 lg:p-8"
+      style={{
+        background: "#F0E0B8",
+        border: "1px solid rgba(201, 168, 76, 0.25)",
+        boxShadow: "var(--shadow-suave)",
+      }}
+    >
       <span
         className="font-display text-5xl leading-none"
-        style={{ color: "oklch(0.75 0.11 88 / 0.25)" }}
+        style={{ color: "var(--color-ouro)", opacity: 0.35 }}
       >
         &ldquo;
       </span>
-      <p className="mt-2 flex-1 font-display text-base leading-relaxed text-muted-foreground italic">
+      <p
+        className="mt-2 flex-1 font-display text-base leading-relaxed italic"
+        style={{ color: "var(--color-verde)", opacity: 0.72 }}
+      >
         {d.texto}
       </p>
-      <div className="mt-6 tracking-[0.1em] text-accent">
+      <div className="mt-6 tracking-[0.1em]" style={{ color: "var(--color-ouro)" }}>
         {"★".repeat(d.nota)}
         {"☆".repeat(5 - d.nota)}
       </div>
-      <footer className="mt-5 flex items-center justify-between border-t border-border pt-5">
+      <footer
+        className="mt-5 flex items-center justify-between border-t pt-5"
+        style={{ borderColor: "rgba(201, 168, 76, 0.25)" }}
+      >
         <div className="flex items-center gap-3">
           <span
             className="flex size-10 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white"
@@ -37,8 +50,12 @@ function Card({ d }: { d: Depoimento }) {
             {d.initials}
           </span>
           <span className="text-sm leading-tight">
-            <strong className="block font-medium text-primary">{d.nome}</strong>
-            <span className="text-xs text-muted-foreground">{d.cidade}</span>
+            <strong className="block" style={{ color: "var(--color-verde)", fontWeight: 700 }}>
+              {d.nome}
+            </strong>
+            <span className="text-xs" style={{ color: "var(--color-verde)", opacity: 0.55 }}>
+              {d.cidade}
+            </span>
           </span>
         </div>
         <span
@@ -49,8 +66,9 @@ function Card({ d }: { d: Depoimento }) {
             letterSpacing: "0.08em",
             fontWeight: 500,
             textTransform: "uppercase",
-            background: "oklch(0.75 0.11 88 / 0.12)",
-            color: "var(--color-ouro)",
+            background: "rgba(27, 67, 50, 0.08)",
+            color: "var(--color-verde)",
+            border: "1px solid rgba(27, 67, 50, 0.15)",
           }}
         >
           {d.fonte}

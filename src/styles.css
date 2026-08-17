@@ -56,6 +56,7 @@
   --color-tinta-suave: var(--tinta-suave);
   --color-italia-verde: var(--italia-verde);
   --color-italia-verm: var(--italia-verm);
+  --color-italia-branco: var(--italia-branco);
 
   --shadow-suave: 0 4px 20px oklch(0.2 0.03 160 / 0.07);
   --shadow-elevado: 0 22px 50px -18px oklch(0.2 0.03 160 / 0.28);
@@ -66,19 +67,20 @@
   --radius: 0.75rem;
 
   /* Cores de marca */
-  --verde:        oklch(0.18 0.03 160);
-  --verde-medio:  oklch(0.28 0.05 158);
-  --verde-card:   oklch(0.23 0.04 158);
-  --ouro:         oklch(0.75 0.11 88);
-  --ouro-claro:   oklch(0.86 0.088 88);
-  --creme:        oklch(0.951 0.015 85);
-  --creme-escuro: oklch(0.86 0.02 85);
-  --creme-muted:  oklch(0.68 0.018 85);
-  --branco:       oklch(0.985 0.008 90);
-  --tinta:        oklch(0.24 0.008 90);
-  --tinta-suave:  oklch(0.48 0.008 90);
-  --italia-verde: oklch(0.55 0.15 155);
-  --italia-verm:  oklch(0.53 0.2 27);
+  --verde:         #163829;
+  --verde-medio:   #1F4D35;
+  --verde-card:    #245741;
+  --ouro:          #C9A84C;
+  --ouro-claro:    #E8C97A;
+  --creme:         #F5ECD7;
+  --creme-escuro:  #E8D5B0;
+  --creme-muted:   #C8B48A;
+  --branco:        #FDF8EE;
+  --tinta:         oklch(0.24 0.008 90);
+  --tinta-suave:   oklch(0.48 0.008 90);
+  --italia-verde:  #009246;
+  --italia-branco: #F4F5F0;
+  --italia-verm:   #CE2B37;
 
   /* Tokens semânticos */
   --background:           var(--verde);
@@ -97,8 +99,8 @@
   --accent-foreground:    var(--verde);
   --destructive:          var(--italia-verm);
   --destructive-foreground: oklch(0.99 0 0);
-  --border:               oklch(0.85 0.04 88 / 0.14);
-  --input:                oklch(0.85 0.04 88 / 0.18);
+  --border:               rgba(201, 168, 76, 0.18);
+  --input:                rgba(201, 168, 76, 0.22);
   --ring:                 var(--ouro);
 
   /* Gradientes */

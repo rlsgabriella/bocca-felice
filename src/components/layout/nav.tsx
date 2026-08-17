@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CONTATO, MENU_URL } from "@/data/info";
 import { useSecaoAtiva } from "@/hooks/use-secao-ativa";
+import { useIsMobile } from "@/hooks/use-mobile";
+import logoBocca from "@/assets/images/logo-bocca.png";
 
 type Link = { href: string; label: string; external?: boolean; id?: string };
 
@@ -19,6 +21,7 @@ export function SiteNav() {
   const [aberto, setAberto] = useState(false);
   const [rolou, setRolou] = useState(false);
   const ativa = useSecaoAtiva(IDS);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const onScroll = () => setRolou(window.scrollY > 60);
@@ -49,18 +52,18 @@ export function SiteNav() {
       }`}
     >
       <div className="mx-auto flex h-[60px] max-w-7xl items-center justify-between px-5 lg:h-[72px] lg:px-10">
-        <a href="#hero" aria-label="Bocca Felice — início" className="flex items-center gap-3">
-          <span className="superficie-ouro flex size-9 items-center justify-center rounded-full font-display text-sm font-bold text-verde">
-            BF
-          </span>
-          <span className="leading-none">
-            <span className="block font-display text-base font-bold tracking-tight text-creme transition-colors">
-              Bocca Felice
-            </span>
-            <span className="block text-[0.6rem] tracking-[0.28em] text-creme/60 uppercase transition-colors">
-              Pasta e Pizza
-            </span>
-          </span>
+        {/* Logo */}
+        <a href="#hero" style={{ textDecoration: "none" }}>
+          <img
+            src={logoBocca}
+            alt="Bocca Felice - Pasta e Pizza"
+            style={{
+              height: isMobile ? "52px" : "64px",
+              width: "auto",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
         </a>
 
         <nav className="hidden items-center gap-9 lg:flex">

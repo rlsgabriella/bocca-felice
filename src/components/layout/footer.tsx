@@ -41,8 +41,8 @@ export function SiteFooter() {
               <span className="font-display text-lg font-bold text-creme">Bocca Felice</span>
             </span>
             <p className="mt-5 text-sm leading-relaxed text-creme-muted">
-              Cucina italiana artigianale e Verace Pizza Napoletana desde 2017 em Sobral, Ceará.
-              Mangia que te fa felice.
+              <em className="font-display italic">Cucina italiana artigianale</em> e Verace Pizza Napoletana desde 2017 em Sobral, Ceará.{" "}
+              <em className="font-display italic">Mangia que te fa felice.</em>
             </p>
           </div>
 

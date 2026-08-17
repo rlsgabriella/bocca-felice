@@ -41,10 +41,34 @@ export function Hero() {
 
       <div className="relative mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-5 pt-24 pb-14 lg:flex-row lg:items-center lg:gap-14 lg:px-16 lg:pt-28 lg:pb-20">
         {/* COLUNA ESQUERDA — texto */}
-        <div className="min-w-0 flex-1">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-ouro/10 px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.28em] text-ouro uppercase lg:text-xs">
-            <span className="inline-block size-1.5 rounded-full bg-ouro" />
-            Sobral · CE · Dal 2017
+        <div style={{ flex: 1, minWidth: 0 }}>
+          {/* Eyebrow */}
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontSize: "clamp(0.6rem, 1.5vw, 0.75rem)",
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "var(--color-ouro)",
+              fontWeight: 600,
+              background: "oklch(0.75 0.11 88 / 0.1)",
+              border: "1px solid var(--color-border)",
+              borderRadius: 9999,
+              padding: "0.35rem 0.85rem",
+            }}
+          >
+            <span
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: "var(--color-ouro)",
+                display: "inline-block",
+              }}
+            />
+            Sobral · CE · <em style={{ fontStyle: "italic" }}>Dal 2017</em>
           </span>
 
           {/* Imagem mobile */}
@@ -72,14 +96,24 @@ export function Hero() {
             </em>
           </h1>
 
-          <div className="filete-ouro mt-6" />
+          {/* Divisor tricolor */}
+          <div style={{ display: "flex", gap: "3px", marginTop: "1.5rem" }}>
+            <div style={{ width: 28, height: 3, borderRadius: 1, background: "#009246" }} />
+            <div style={{ width: 28, height: 3, borderRadius: 1, background: "#F4F5F0", opacity: 0.8 }} />
+            <div style={{ width: 28, height: 3, borderRadius: 1, background: "#CE2B37" }} />
+          </div>
 
           <p
-            className="mt-5 max-w-[38ch] text-creme-muted"
-            style={{ fontSize: "clamp(0.9rem, 1.6vw, 1.05rem)", lineHeight: 1.7 }}
+            className="font-display italic"
+            style={{
+              marginTop: "1.25rem",
+              fontSize: "clamp(0.85rem, 2vw, 1rem)",
+              lineHeight: 1.7,
+              color: "var(--color-creme-muted)",
+            }}
           >
-            Massas artesanais frescas, Verace Pizza Napoletana com fermentação de 48h e um
-            ambiente que remete às cantinas de Nápoles, aqui em Sobral.
+            Massas artesanais, Verace Pizza Napoletana com fermentação de 48h
+            e um ambiente que remete às cantinas de Nápoles, aqui em Sobral.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
