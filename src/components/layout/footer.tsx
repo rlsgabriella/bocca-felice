@@ -147,8 +147,8 @@ export function BotaoWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed right-4 bottom-4 z-50 flex size-[50px] items-center justify-center rounded-full text-white shadow-elevado transition-transform hover:scale-110 lg:right-6 lg:bottom-6 lg:size-14"
-      style={{ background: "#25d366" }}
+      className="fixed right-4 bottom-4 z-50 flex size-[50px] items-center justify-center rounded-full border border-ouro/40 text-verde shadow-ouro transition-transform hover:scale-110 lg:right-6 lg:bottom-6 lg:size-14"
+      style={{ background: "var(--color-ouro)" }}
     >
       <MessageCircle className="size-5 lg:size-6" />
     </a>

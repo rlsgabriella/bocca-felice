@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Play } from "lucide-react";
 import chefThyago from "@/assets/images/chef-thyago.jpg";
 
 function Eyebrow({ children }: { children: string }) {
@@ -14,7 +15,7 @@ function VideoPlayer() {
     <div className="mt-12 lg:mt-20">
       <div className="text-center">
         <Eyebrow>Nos bastidores</Eyebrow>
-        <h3 className="mt-3 font-display text-3xl font-bold text-primary lg:text-4xl">
+        <h3 className="mt-3 font-display text-2xl font-bold text-primary lg:text-3xl">
           A cozinha que faz a diferença
         </h3>
       </div>
@@ -75,7 +76,8 @@ function VideoPlayer() {
                 zIndex: 2,
               }}
             >
-              ▶ 32s · Vídeo Institucional
+              <Play className="size-3 fill-current text-ouro" />
+              32s · Vídeo Institucional
             </div>
 
             {/* Botão play centralizado */}
@@ -146,7 +148,7 @@ function VideoPlayer() {
 
 export function Sobre() {
   return (
-    <section id="sobre" className="bg-verde-medio py-12 lg:py-24">
+    <section id="sobre" className="bg-verde-medio py-16 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         {/* Grid 2 colunas */}
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
@@ -172,7 +174,7 @@ export function Sobre() {
           {/* Texto */}
           <div className="revelar" data-revelar>
             <Eyebrow>Nossa História</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-primary lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-primary lg:text-4xl">
               Uma cozinha com alma{" "}
               <em className="font-script text-accent not-italic">italiana</em>
             </h2>
@@ -186,7 +188,7 @@ export function Sobre() {
               Comandado pelo chef <strong className="text-primary">Thyago Lopes</strong>, dos
               queijos importados aos processos de cocção artesanal, tudo para que cada garfada
               valha a pena.{" "}
-              <em>Mangia que te fa felice. 🤌</em>
+              <em className="text-accent">Mangia que te fa felice.</em>
             </p>
           </div>
         </div>

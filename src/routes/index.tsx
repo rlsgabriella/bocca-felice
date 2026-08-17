@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/layout/nav";
 import { SiteFooter, BotaoWhatsApp } from "@/components/layout/footer";
+import { DivisorOuro } from "@/components/layout/divisor";
 import { Hero } from "@/components/sections/hero";
 import { Sobre } from "@/components/sections/sobre";
 import { GaleriaCardapio } from "@/components/sections/galeria-cardapio";
@@ -36,9 +37,13 @@ function Index() {
       <SiteNav />
       <main>
         <Hero />
+        <DivisorOuro />
         <Sobre />
+        <DivisorOuro />
         <GaleriaCardapio />
+        <DivisorOuro />
         <Depoimentos />
+        <DivisorOuro />
         <Info />
         <Reservas />
       </main>

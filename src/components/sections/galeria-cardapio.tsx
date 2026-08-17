@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { UtensilsCrossed } from "lucide-react";
 import { useSwipe } from "@/hooks/use-swipe";
 import spaghettiNero from "@/assets/images/spaghetti-nero.jpeg";
 import spaghettiAlfredo from "@/assets/images/spaghetti-alfredo.jpeg";
@@ -100,7 +101,7 @@ export function GaleriaCardapio() {
   const slideWidth = `calc(100% / ${slidesVisiveis})`;
   const translateX = `translateX(-${current * (100 / slidesVisiveis)}%)`;
 
-  const sectionPadding = isMobile ? "3rem 0" : "5rem 0 4rem";
+  const sectionPadding = isMobile ? "4rem 0" : "7rem 0";
   const headerPadding = isMobile ? "0 1.25rem" : "0 2rem";
   const imgHeight = isMobile ? 220 : 260;
 
@@ -418,7 +419,8 @@ export function GaleriaCardapio() {
             (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
           }}
         >
-          🍝 Ver Cardápio Completo
+          <UtensilsCrossed style={{ width: 18, height: 18 }} />
+          Ver Cardápio Completo
         </a>
         <p style={{ color: "var(--creme-muted)", fontSize: "0.8rem", marginTop: "0.75rem" }}>
           Cardápio digital · Peça também pelo WhatsApp
