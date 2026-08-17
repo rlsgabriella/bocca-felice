@@ -1,26 +1,7 @@
-import { Pizza, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import fachada from "@/assets/images/restaurante-fachada.jpeg";
 import chefThyago from "@/assets/images/chef-thyago.jpg";
 import { CONTATO, MENU_URL } from "@/data/info";
-import { useStatusAberto } from "@/hooks/use-status-aberto";
-
-function SeloStatus() {
-  const status = useStatusAberto();
-  if (!status) return null;
-
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-verde-card/70 px-3 py-1.5 text-xs text-creme backdrop-blur">
-      <span
-        className="size-2 rounded-full"
-        style={{
-          background: status.aberto ? "var(--color-italia-verde)" : "var(--color-italia-verm)",
-          boxShadow: status.aberto ? "0 0 0 4px oklch(0.55 0.15 155 / 0.18)" : undefined,
-        }}
-      />
-      {status.texto}
-    </span>
-  );
-}
 
 export function Hero() {
   return (
@@ -134,7 +115,7 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Prova social + status */}
+          {/* Prova social */}
           <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
             <span className="inline-flex items-center gap-2 text-sm text-creme-muted">
               <span className="flex items-center gap-0.5 text-ouro">
@@ -145,22 +126,34 @@ export function Hero() {
               <strong className="font-semibold text-creme">4,8</strong>
               no Google · +1.200 avaliações
             </span>
-            <SeloStatus />
           </div>
         </div>
 
         {/* COLUNA DIREITA — imagem desktop */}
-        <div className="relative hidden w-[46%] max-w-[500px] shrink-0 lg:block">
+        <div className="relative hidden w-[42%] max-w-[480px] shrink-0 lg:block">
           {/* Badge topo-esquerdo */}
           <div
-            className="absolute top-6 -left-12 z-10 flex items-center gap-2 rounded-full border border-border bg-verde-card px-4 py-2.5 text-sm font-medium whitespace-nowrap text-creme"
             style={{
-              boxShadow: "0 8px 32px rgba(0,0,0,0.28)",
+              position: "absolute",
+              top: "1.5rem",
+              left: "-3.5rem",
+              zIndex: 10,
+              background: "rgba(22, 56, 41, 0.92)",
+              border: "1px solid rgba(201,168,76,0.3)",
+              borderRadius: "9999px",
+              padding: "0.65rem 1.1rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+              whiteSpace: "nowrap",
               animation: "floatY 4s ease-in-out infinite",
             }}
           >
-            <Pizza className="size-4 text-ouro" />
-            Verace Pizza Napoletana
+            <span style={{ fontSize: "0.85rem" }}>🌿</span>
+            <span style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--creme)" }}>
+              Ingredientes importados da Itália
+            </span>
           </div>
 
           <div
@@ -175,23 +168,50 @@ export function Hero() {
             />
           </div>
 
-          {/* Badge chef — canto inferior esquerdo, longe do texto da foto */}
+          {/* Badge chef — canto inferior direito */}
           <div
-            className="absolute -bottom-6 -left-10 z-10 flex items-center gap-3 rounded-full border border-border bg-verde-card py-2.5 pr-5 pl-2.5"
             style={{
-              boxShadow: "0 8px 32px rgba(0,0,0,0.28)",
+              position: "absolute",
+              bottom: "2.5rem",
+              right: "-3rem",
+              zIndex: 10,
+              background: "rgba(22, 56, 41, 0.92)",
+              border: "1px solid rgba(201,168,76,0.3)",
+              borderRadius: "9999px",
+              padding: "0.65rem 1rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+              whiteSpace: "nowrap",
               animation: "floatY 4s ease-in-out 1.5s infinite",
             }}
           >
             <img
               src={chefThyago}
               alt="Chef Thyago Lopes"
-              className="size-9 shrink-0 rounded-full object-cover"
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: "50%",
+                objectFit: "cover",
+                flexShrink: 0,
+                border: "1.5px solid rgba(201,168,76,0.4)",
+              }}
             />
-            <span className="leading-tight">
-              <span className="block text-sm font-semibold text-creme">Chef Thyago Lopes</span>
-              <span className="block text-xs text-creme-muted">{CONTATO.instagramHandle}</span>
-            </span>
+            <div>
+              <div style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--creme)", lineHeight: 1.2 }}>
+                Chef Thyago Lopes
+              </div>
+              <a
+                href="https://instagram.com/thyagom_lopes"
+                target="_blank"
+                rel="noreferrer"
+                style={{ fontSize: "0.68rem", color: "rgba(201,168,76,0.8)", textDecoration: "none" }}
+              >
+                @thyagom_lopes
+              </a>
+            </div>
           </div>
         </div>
       </div>
