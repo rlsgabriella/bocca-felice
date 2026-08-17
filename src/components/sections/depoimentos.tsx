@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useSwipe } from "@/hooks/use-swipe";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { depoimentos } from "@/data/depoimentos";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -73,6 +74,7 @@ export function Depoimentos() {
 
   const next = useCallback(() => setPage((p) => (p + 1) % pageCount), [pageCount]);
   const prev = useCallback(() => setPage((p) => (p - 1 + pageCount) % pageCount), [pageCount]);
+  const { handlers: swipeHandlers, isDragging, deltaX } = useSwipe(next, prev);
 
   useEffect(() => {
     if (paused) return;
@@ -96,11 +98,22 @@ export function Depoimentos() {
           onMouseLeave={() => setPaused(false)}
         >
           {/* Viewport */}
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden"
+            style={{ touchAction: "pan-y" }}
+            onTouchStart={(e) => { setPaused(true); swipeHandlers.onTouchStart(e); }}
+            onTouchMove={swipeHandlers.onTouchMove}
+            onTouchEnd={() => { setPaused(false); swipeHandlers.onTouchEnd(); }}
+          >
             {/* Track */}
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${page * 100}%)` }}
+              className="flex"
+              style={{
+                transform: isDragging
+                  ? `translateX(calc(-${page * 100}% + ${deltaX}px))`
+                  : `translateX(-${page * 100}%)`,
+                transition: isDragging ? "none" : "transform 0.5s ease-in-out",
+              }}
             >
               {Array.from({ length: pageCount }, (_, i) => (
                 <div key={i} className="flex min-w-full gap-6">

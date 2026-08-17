@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { useSwipe } from "@/hooks/use-swipe";
 import spaghettiNero from "@/assets/images/spaghetti-nero.jpeg";
 import spaghettiAlfredo from "@/assets/images/spaghetti-alfredo.jpeg";
 import frutosDomar from "@/assets/images/frutos-do-mar.jpeg";
@@ -84,8 +85,9 @@ export function GaleriaCardapio() {
     setCurrent((c) => Math.min(c, Math.max(0, PRATOS.length - slidesVisiveis)));
   }, [slidesVisiveis]);
 
-  const goNext = () => setCurrent((c) => (c >= maxIndex ? 0 : c + 1));
-  const goPrev = () => setCurrent((c) => (c <= 0 ? maxIndex : c - 1));
+  const goNext = useCallback(() => setCurrent((c) => (c >= maxIndex ? 0 : c + 1)), [maxIndex]);
+  const goPrev = useCallback(() => setCurrent((c) => (c <= 0 ? maxIndex : c - 1)), [maxIndex]);
+  const { handlers: swipeHandlers, isDragging, deltaX } = useSwipe(goNext, goPrev);
 
   useEffect(() => {
     if (isPaused) return;
@@ -150,12 +152,19 @@ export function GaleriaCardapio() {
         onMouseEnter={() => { setIsPaused(true); setContainerHovered(true); }}
         onMouseLeave={() => { setIsPaused(false); setContainerHovered(false); }}
       >
-        <div style={{ overflow: "hidden" }}>
+        <div
+          style={{ overflow: "hidden", touchAction: "pan-y" }}
+          onTouchStart={(e) => { setIsPaused(true); swipeHandlers.onTouchStart(e); }}
+          onTouchMove={swipeHandlers.onTouchMove}
+          onTouchEnd={() => { setIsPaused(false); swipeHandlers.onTouchEnd(); }}
+        >
           <div
             style={{
               display: "flex",
-              transition: "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-              transform: translateX,
+              transition: isDragging ? "none" : "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              transform: isDragging
+                ? `translateX(calc(-${current * (100 / slidesVisiveis)}% + ${deltaX}px))`
+                : translateX,
             }}
           >
             {PRATOS.map((prato) => (
