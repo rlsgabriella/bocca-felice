@@ -84,13 +84,13 @@ export function Hero() {
           <h1 className="mt-6 font-display font-bold" style={{ letterSpacing: "-0.02em" }}>
             <span
               className="block text-creme"
-              style={{ fontSize: "clamp(2rem, 5.6vw, 3.6rem)", lineHeight: 1.05 }}
+              style={{ fontSize: "clamp(1.6rem, 5vw, 3rem)", lineHeight: 1.05 }}
             >
               Desde 2017 trazendo
             </span>
             <em
               className="mt-1 block font-script text-ouro not-italic"
-              style={{ fontSize: "clamp(2.1rem, 6.4vw, 4.4rem)", fontWeight: 400, lineHeight: 1.15 }}
+              style={{ fontSize: "clamp(1.5rem, 4.5vw, 2.8rem)", fontWeight: 400, lineHeight: 1.15 }}
             >
               a Itália para Sobral
             </em>
@@ -106,8 +106,8 @@ export function Hero() {
             className="font-display italic"
             style={{
               marginTop: "1.25rem",
-              fontSize: "clamp(0.85rem, 2vw, 1rem)",
-              lineHeight: 1.7,
+              fontSize: "1.05rem",
+              lineHeight: 1.8,
               color: "var(--color-creme-muted)",
             }}
           >
