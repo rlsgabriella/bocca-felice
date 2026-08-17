@@ -96,11 +96,10 @@ export function Hero() {
             </em>
           </h1>
 
-          {/* Divisor tricolor */}
-          <div style={{ display: "flex", gap: "3px", marginTop: "1.5rem" }}>
-            <div style={{ width: 28, height: 3, borderRadius: 1, background: "#009246" }} />
-            <div style={{ width: 28, height: 3, borderRadius: 1, background: "#F4F5F0", opacity: 0.8 }} />
-            <div style={{ width: 28, height: 3, borderRadius: 1, background: "#CE2B37" }} />
+          <div style={{ display: 'flex', gap: '0', margin: '0.75rem 0 0', width: '84px' }}>
+            <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
+            <div style={{ flex: 1, height: '2.5px', background: '#F4F5F0' }} />
+            <div style={{ flex: 1, height: '2.5px', background: '#CE2B37', borderRadius: '0 1px 1px 0' }} />
           </div>
 
           <p

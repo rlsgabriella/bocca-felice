@@ -28,11 +28,6 @@ function VideoPlayer() {
           <h3 className="mt-3 font-display text-3xl font-bold text-primary lg:text-4xl">
             A cozinha que faz a diferença
           </h3>
-          <div style={{ display: "flex", gap: 0, margin: "1rem auto 0", width: "fit-content", borderRadius: "1px", overflow: "hidden" }}>
-            <div style={{ width: 24, height: 2, background: "#009246" }} />
-            <div style={{ width: 24, height: 2, background: "#F4F5F0" }} />
-            <div style={{ width: 24, height: 2, background: "#CE2B37" }} />
-          </div>
         </div>
 
         {/* Grid 2 colunas */}

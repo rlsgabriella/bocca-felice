@@ -1,5 +1,6 @@
 import { Instagram, MessageCircle } from "lucide-react";
 import { CONTATO } from "@/data/info";
+import logoBocca from "@/assets/images/logo-bocca.png";
 
 const MENU_URL = "https://boccafelice.saipos.com/bocca-felice-pasta-e-pizza/table/dtsxxtl";
 
@@ -35,11 +36,32 @@ export function SiteFooter() {
         <div className="grid gap-12 border-b border-border pb-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <span className="flex items-center gap-3">
-              <span className="superficie-ouro flex size-10 items-center justify-center rounded-full font-display text-sm font-bold text-verde">
-                BF
-              </span>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                flexShrink: 0,
+                border: '1px solid rgba(201,168,76,0.3)',
+              }}>
+                <img
+                  src={logoBocca}
+                  alt="Bocca Felice"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                  }}
+                />
+              </div>
               <span className="font-display text-lg font-bold text-creme">Bocca Felice</span>
             </span>
+            <div style={{ display: 'flex', gap: '0', margin: '0.75rem 0 0', width: '84px' }}>
+              <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
+              <div style={{ flex: 1, height: '2.5px', background: '#F4F5F0' }} />
+              <div style={{ flex: 1, height: '2.5px', background: '#CE2B37', borderRadius: '0 1px 1px 0' }} />
+            </div>
             <p className="mt-5 text-sm leading-relaxed text-creme-muted">
               <em className="font-display italic">Cucina italiana artigianale</em> e Verace Pizza Napoletana desde 2017 em Sobral, Ceará.{" "}
               <em className="font-display italic">Mangia que te fa felice.</em>

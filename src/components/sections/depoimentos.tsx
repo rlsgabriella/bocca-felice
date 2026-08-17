@@ -108,6 +108,11 @@ export function Depoimentos() {
           <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
             O que nossos <em className="font-script text-accent not-italic">clientes</em> dizem
           </h2>
+          <div style={{ display: 'flex', gap: '0', margin: '0.75rem auto 0', width: '84px' }}>
+            <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
+            <div style={{ flex: 1, height: '2.5px', background: '#F4F5F0' }} />
+            <div style={{ flex: 1, height: '2.5px', background: '#CE2B37', borderRadius: '0 1px 1px 0' }} />
+          </div>
         </div>
 
         <div

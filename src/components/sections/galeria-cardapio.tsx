@@ -134,6 +134,11 @@ export function GaleriaCardapio() {
             Cucina
           </em>
         </h2>
+        <div style={{ display: 'flex', gap: '0', margin: '0.75rem auto 0', width: '84px' }}>
+          <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
+          <div style={{ flex: 1, height: '2.5px', background: '#F4F5F0' }} />
+          <div style={{ flex: 1, height: '2.5px', background: '#CE2B37', borderRadius: '0 1px 1px 0' }} />
+        </div>
         <p
           style={{
             color: "var(--creme-muted)",

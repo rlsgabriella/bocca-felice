@@ -37,6 +37,11 @@ export function Info() {
             <br />
             <em className="font-script text-accent not-italic">funcionamento</em>
           </h2>
+          <div style={{ display: 'flex', gap: '0', margin: '0.75rem 0 0', width: '84px' }}>
+            <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
+            <div style={{ flex: 1, height: '2.5px', background: '#F4F5F0' }} />
+            <div style={{ flex: 1, height: '2.5px', background: '#CE2B37', borderRadius: '0 1px 1px 0' }} />
+          </div>
           <ChipStatus />
           <dl className="mt-6">
             {HORARIOS.map(({ dia, hora, fechado }) => (
