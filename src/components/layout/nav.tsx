@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { CONTATO, MENU_URL } from "@/data/info";
+import { useSecaoAtiva } from "@/hooks/use-secao-ativa";
 
-const MENU_URL = "https://boccafelice.saipos.com/bocca-felice-pasta-e-pizza/table/dtsxxtl";
-
-type Link = { href: string; label: string; external?: boolean };
+type Link = { href: string; label: string; external?: boolean; id?: string };
 
 const LINKS: Link[] = [
-  { href: "#sobre",       label: "Sobre" },
-  { href: "#galeria",     label: "Galeria" },
-  { href: MENU_URL,       label: "Cardápio",   external: true },
-  { href: "#depoimentos", label: "Avaliações" },
-  { href: "#info",        label: "Localização" },
+  { href: "#sobre",       label: "Sobre",       id: "sobre" },
+  { href: "#galeria",     label: "Cardápio",    id: "galeria" },
+  { href: MENU_URL,       label: "Pedir Online", external: true },
+  { href: "#depoimentos", label: "Avaliações",  id: "depoimentos" },
+  { href: "#info",        label: "Localização", id: "info" },
 ];
+
+const IDS = LINKS.map((l) => l.id).filter((id): id is string => Boolean(id));
 
 export function SiteNav() {
   const [aberto, setAberto] = useState(false);
   const [rolou, setRolou] = useState(false);
+  const ativa = useSecaoAtiva(IDS);
 
   useEffect(() => {
     const onScroll = () => setRolou(window.scrollY > 60);
@@ -24,9 +27,18 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkClass = rolou
-    ? "relative text-sm text-muted-foreground transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all hover:text-accent hover:after:w-full"
-    : "relative text-sm text-creme/80 transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-ouro after:transition-all hover:text-accent hover:after:w-full";
+  const linkClass = (l: Link) => {
+    const ativo = Boolean(l.id && l.id === ativa);
+    const base =
+      "relative text-sm transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-ouro after:transition-all hover:text-accent";
+    const cor = ativo
+      ? "text-accent"
+      : rolou
+        ? "text-muted-foreground"
+        : "text-creme/80";
+    const sublinhado = ativo ? "after:w-full" : "after:w-0 hover:after:w-full";
+    return `${base} ${cor} ${sublinhado}`;
+  };
 
   return (
     <header
@@ -37,22 +49,20 @@ export function SiteNav() {
       }`}
     >
       <div className="mx-auto flex h-[60px] max-w-7xl items-center justify-between px-5 lg:h-[72px] lg:px-10">
-        {/* Logo */}
         <a href="#hero" aria-label="Bocca Felice — início" className="flex items-center gap-3">
           <span className="superficie-ouro flex size-9 items-center justify-center rounded-full font-display text-sm font-bold text-verde">
             BF
           </span>
           <span className="leading-none">
-            <span className={`block font-display text-base font-bold tracking-tight transition-colors ${rolou ? "text-primary" : "text-creme"}`}>
+            <span className="block font-display text-base font-bold tracking-tight text-creme transition-colors">
               Bocca Felice
             </span>
-            <span className={`block text-[0.6rem] tracking-[0.28em] uppercase transition-colors ${rolou ? "text-muted-foreground" : "text-creme/60"}`}>
+            <span className="block text-[0.6rem] tracking-[0.28em] text-creme/60 uppercase transition-colors">
               Pasta e Pizza
             </span>
           </span>
         </a>
 
-        {/* Links desktop */}
         <nav className="hidden items-center gap-9 lg:flex">
           {LINKS.map((l) => (
             <a
@@ -60,17 +70,16 @@ export function SiteNav() {
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noreferrer" : undefined}
-              className={linkClass}
+              className={linkClass(l)}
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        {/* CTA desktop */}
         <div className="hidden lg:block">
           <a
-            href="https://wa.me/5588997041694"
+            href={CONTATO.whatsapp}
             target="_blank"
             rel="noreferrer"
             className="rounded-full bg-ouro px-5 py-2 text-sm font-semibold text-verde shadow-ouro transition-all hover:-translate-y-0.5 hover:bg-ouro-claro"
@@ -79,18 +88,16 @@ export function SiteNav() {
           </a>
         </div>
 
-        {/* Hamburguer — 44×44px touch target */}
         <button
           type="button"
           aria-label="Abrir menu"
           onClick={() => setAberto((v) => !v)}
-          className="flex size-11 items-center justify-center rounded-full border border-border text-primary lg:hidden"
+          className="flex size-11 items-center justify-center rounded-full border border-border text-creme lg:hidden"
         >
           {aberto ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
-      {/* Menu mobile */}
       {aberto && (
         <div className="border-t border-border bg-background/98 px-5 py-4 backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col">
@@ -101,13 +108,15 @@ export function SiteNav() {
                 target={l.external ? "_blank" : undefined}
                 rel={l.external ? "noreferrer" : undefined}
                 onClick={() => !l.external && setAberto(false)}
-                className="flex min-h-[44px] items-center text-sm text-muted-foreground hover:text-accent"
+                className={`flex min-h-[44px] items-center text-sm hover:text-accent ${
+                  l.id === ativa ? "text-accent" : "text-muted-foreground"
+                }`}
               >
                 {l.label}
               </a>
             ))}
             <a
-              href="https://wa.me/5588997041694"
+              href={CONTATO.whatsapp}
               target="_blank"
               rel="noreferrer"
               onClick={() => setAberto(false)}
