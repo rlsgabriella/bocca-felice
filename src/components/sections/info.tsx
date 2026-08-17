@@ -55,7 +55,7 @@ export function Info() {
 
         <div className="revelar" data-revelar>
           <Eyebrow>Localização</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
             Como nos <em className="font-script text-accent not-italic">encontrar</em>
           </h2>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-verde-card">

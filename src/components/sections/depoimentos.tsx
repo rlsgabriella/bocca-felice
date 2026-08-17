@@ -87,7 +87,7 @@ export function Depoimentos() {
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="revelar text-center" data-revelar>
           <Eyebrow>Testimonianze</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
             O que nossos <em className="font-script text-accent not-italic">clientes</em> dizem
           </h2>
         </div>

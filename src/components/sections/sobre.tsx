@@ -174,7 +174,7 @@ export function Sobre() {
           {/* Texto */}
           <div className="revelar" data-revelar>
             <Eyebrow>Nossa História</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-primary lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-primary lg:text-4xl">
               Uma cozinha com alma{" "}
               <em className="font-script text-accent not-italic">italiana</em>
             </h2>
