@@ -5,6 +5,7 @@ import frutosDomar from "@/assets/images/frutos-do-mar.jpeg";
 import camaraoCreme from "@/assets/images/camarao-creme.jpeg";
 import ravioli from "@/assets/images/ravioli.jpeg";
 import tiramisu from "@/assets/images/tiramisu.jpeg";
+import mesaVinho from "@/assets/images/mesa-vinho.jpeg";
 
 const LINK_CARDAPIO =
   "https://boccafelice.saipos.com/bocca-felice-pasta-e-pizza/table/dtsxxtl";
@@ -45,6 +46,12 @@ const PRATOS = [
     tag: "Dolci",
     nome: "Tiramisù Classico",
     desc: "Receita original com mascarpone, savoiardi, café espresso e cacau belga.",
+  },
+  {
+    img: mesaVinho,
+    tag: "Ambiente",
+    nome: "Mesa & Vinho",
+    desc: "Uma noite perfeita começa com uma boa mesa, um vinho harmonizado e a companhia certa.",
   },
 ];
 
