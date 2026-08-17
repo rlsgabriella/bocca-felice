@@ -11,9 +11,9 @@ export function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Inner wrapper — padding/gap responsivo via Tailwind */}
+      {/* Inner wrapper */}
       <div
-        className="mx-auto flex w-full items-center gap-0 px-5 pt-24 pb-12 lg:gap-12 lg:px-16 lg:pt-28 lg:pb-16"
+        className="mx-auto flex w-full flex-col px-5 pt-22 pb-12 lg:flex-row lg:items-center lg:gap-12 lg:px-16 lg:pt-28 lg:pb-16"
         style={{ maxWidth: "1200px" }}
       >
         {/* COLUNA ESQUERDA — texto */}
@@ -47,12 +47,35 @@ export function Hero() {
             Sobral · CE · Dal 2017
           </span>
 
+          {/* IMAGEM MOBILE — visível apenas abaixo de lg, entre eyebrow e h1 */}
+          <div
+            className="mt-5 block lg:hidden"
+            style={{
+              width: "100%",
+              aspectRatio: "16/9",
+              borderRadius: "1rem",
+              overflow: "hidden",
+              background: "var(--color-verde-medio)",
+              marginBottom: "1.5rem",
+            }}
+          >
+            <img
+              src={fachada}
+              alt="Bocca Felice — fachada do restaurante"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center 30%",
+              }}
+            />
+          </div>
+
           {/* H1 */}
           <h1
             className="font-display"
             style={{
-              marginTop: "1.5rem",
-              fontSize: "clamp(1.9rem, 7vw, 4rem)",
+              fontSize: "clamp(2rem, 8vw, 4rem)",
               lineHeight: 1.08,
               fontWeight: 700,
               letterSpacing: "-0.02em",
@@ -65,7 +88,7 @@ export function Hero() {
               style={{
                 display: "block",
                 marginTop: "0.25rem",
-                fontSize: "clamp(2rem, 7vw, 4.75rem)",
+                fontSize: "clamp(1.8rem, 7vw, 4.75rem)",
                 fontStyle: "normal",
                 fontWeight: 400,
                 color: "var(--color-ouro)",
@@ -99,7 +122,7 @@ export function Hero() {
             e um ambiente que remete às cantinas de Nápoles — no coração de Sobral.
           </p>
 
-          {/* Botões — coluna no mobile, linha no sm+ */}
+          {/* Botões */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href="https://wa.me/5588997041694"
@@ -110,7 +133,7 @@ export function Hero() {
                 borderRadius: 9999,
                 background: "var(--color-ouro)",
                 color: "var(--color-verde)",
-                padding: "0.85rem 2rem",
+                padding: "0.9rem 2rem",
                 fontSize: "0.875rem",
                 fontWeight: 600,
                 textDecoration: "none",
@@ -136,7 +159,7 @@ export function Hero() {
                 borderRadius: 9999,
                 border: "1px solid var(--color-border)",
                 color: "var(--color-creme)",
-                padding: "0.85rem 2rem",
+                padding: "0.9rem 2rem",
                 fontSize: "0.875rem",
                 fontWeight: 600,
                 textDecoration: "none",
@@ -157,7 +180,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA — imagem, oculta em mobile */}
+        {/* COLUNA DIREITA — imagem desktop (hidden em mobile) */}
         <div
           className="hidden lg:block"
           style={{
@@ -256,7 +279,7 @@ export function Hero() {
                 Chef Thyago Lopes
               </div>
               <div style={{ fontSize: "0.7rem", color: "var(--color-creme-muted)" }}>
-              @boccafelicepastaepizza
+                @boccafelicepastaepizza
               </div>
             </div>
           </div>
