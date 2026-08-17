@@ -83,7 +83,7 @@ export function Depoimentos() {
   }, [paused, next]);
 
   return (
-    <section id="depoimentos" className="bg-background py-12 lg:py-24">
+    <section id="depoimentos" className="bg-background py-16 lg:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="revelar text-center" data-revelar>
           <Eyebrow>Testimonianze</Eyebrow>
