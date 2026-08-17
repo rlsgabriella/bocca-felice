@@ -15,7 +15,7 @@ function VideoPlayer() {
     <div className="mt-12 lg:mt-20">
       <div className="text-center">
         <Eyebrow>Nos bastidores</Eyebrow>
-        <h3 className="mt-3 font-display text-3xl font-bold text-primary lg:text-4xl">
+        <h3 className="mt-3 font-display text-2xl font-bold text-primary lg:text-3xl">
           A cozinha que faz a diferença
         </h3>
       </div>
