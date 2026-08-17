@@ -52,7 +52,7 @@ const PRATOS = [
     img: mesaVinho,
     tag: "Ambiente",
     nome: "Mesa & Vinho",
-    desc: "Uma noite perfeita começa com uma boa mesa, um vinho harmonizado e a companhia certa.",
+    desc: "Uma boa noite começa com uma mesa bem posta e um vinho escolhido a dedo.",
   },
 ];
 
@@ -142,7 +142,7 @@ export function GaleriaCardapio() {
             margin: "0.75rem auto 0",
           }}
         >
-          Ingredientes selecionados, técnicas tradicionais e muito amor em cada prato
+          Ingredientes importados, técnicas italianas e dedicação em cada prato
         </p>
       </div>
 

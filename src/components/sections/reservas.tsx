@@ -15,7 +15,7 @@ export function Reservas() {
           próxima experiência?
         </h2>
         <p className="mt-4 text-sm text-verde/75">
-          Viva uma experiência gastronômica italiana inesquecível em Sobral.
+          Venha viver a gastronomia italiana em Sobral.
         </p>
         <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
           <a

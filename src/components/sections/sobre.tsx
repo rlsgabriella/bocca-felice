@@ -179,13 +179,13 @@ export function Sobre() {
             <div className="filete-ouro mt-6" />
             <p className="mt-6 leading-relaxed text-muted-foreground">
               Desde 2017, o <strong className="text-primary">Bocca Felice</strong> construiu mais
-              do que um restaurante — criou uma cultura italiana no coração do Ceará. Com público
+              do que um restaurante. Criou uma cultura italiana no coração do Ceará, com público
               fiel, noites especiais e um ambiente que remete às cantinas de Nápoles.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Comandado pelo chef <strong className="text-primary">Thyago Lopes</strong>, cada
-              detalhe — dos queijos importados aos processos lentos de cocção — é pensado para que
-              você sinta a diferença em cada garfada.{" "}
+              Comandado pelo chef <strong className="text-primary">Thyago Lopes</strong>, dos
+              queijos importados aos processos de cocção artesanal, tudo para que cada garfada
+              valha a pena.{" "}
               <em>Mangia que te fa felice. 🤌</em>
             </p>
           </div>

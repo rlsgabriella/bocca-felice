@@ -119,7 +119,7 @@ export function Hero() {
             }}
           >
             Massas artesanais frescas, Verace Pizza Napoletana com fermentação de 48h
-            e um ambiente que remete às cantinas de Nápoles — no coração de Sobral.
+            e um ambiente que remete às cantinas de Nápoles, aqui em Sobral.
           </p>
 
           {/* Botões */}
