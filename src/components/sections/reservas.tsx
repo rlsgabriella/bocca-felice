@@ -9,7 +9,7 @@ export function Reservas() {
     >
       <div className="mx-auto max-w-3xl px-5">
         <div className="mx-auto mb-6 h-px w-10 bg-verde/50" />
-        <h2 className="font-display text-3xl leading-tight font-bold text-verde lg:text-5xl">
+        <h2 className="font-display text-[1.75rem] leading-tight font-bold text-verde lg:text-[2.8rem]">
           Pronto para sua
           <br />
           próxima experiência?

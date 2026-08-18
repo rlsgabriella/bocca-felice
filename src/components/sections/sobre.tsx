@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import chefThyago from "@/assets/images/chef-thyago.jpg";
-import video360 from "@/assets/images/BOCA FELICE.mp4";
+import video360 from "@/assets/images/BOCA_FELICE_web.mp4";
 
 function Eyebrow({ children }: { children: string }) {
   return (
@@ -25,7 +25,7 @@ function VideoPlayer() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <Eyebrow>Nos bastidores</Eyebrow>
-          <h3 className="mt-3 font-display text-3xl font-bold text-primary lg:text-4xl">
+          <h3 className="mt-3 font-display text-[1.75rem] font-bold text-primary lg:text-[2.1rem]">
             A cozinha que faz a diferença
           </h3>
         </div>
@@ -212,10 +212,19 @@ export function Sobre() {
               width={1008}
               height={1260}
               loading="lazy"
-              className="aspect-4/5 w-full rounded-[1.5rem] object-cover shadow-elevado"
+              className="aspect-4/5 w-full rounded-[1.5rem] object-cover"
+              style={{ boxShadow: "0 12px 32px rgba(201, 168, 76, 0.25), 0 4px 12px rgba(201, 168, 76, 0.15)" }}
             />
-            <div className="absolute right-2 -bottom-3 rounded-2xl border border-ouro bg-verde px-5 py-4 text-center shadow-elevado lg:-right-4 lg:-bottom-6">
-              <strong className="block font-display text-2xl text-ouro">2017</strong>
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              borderRadius: "1.5rem",
+              background: "linear-gradient(135deg, rgba(201, 168, 76, 0.12) 0%, rgba(201, 168, 76, 0.08) 100%)",
+              zIndex: 1,
+              pointerEvents: "none",
+            }} />
+            <div className="absolute right-2 -bottom-3 rounded-2xl border border-ouro bg-verde px-5 py-4 text-center shadow-elevado lg:-right-4 lg:-bottom-6" style={{ zIndex: 2 }}>
+              <strong className="block font-display text-[1.4rem] text-ouro">2017</strong>
               <span className="text-[0.65rem] tracking-[0.2em] text-creme/70 uppercase">
                 Dal · Fundação
               </span>
@@ -225,9 +234,9 @@ export function Sobre() {
           {/* Texto */}
           <div className="revelar" data-revelar>
             <Eyebrow>Nossa História</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-primary lg:text-4xl">
+            <h2 className="mt-4 font-display text-[1.75rem] leading-tight font-bold text-primary lg:text-[2.1rem]">
               Uma cozinha com alma{" "}
-              <em className="font-script text-accent not-italic">italiana</em>
+              <em className="font-script text-accent not-italic" style={{ fontSize: "1.15em" }}>italiana</em>
             </h2>
             <div style={{ display: "flex", gap: "3px", marginTop: "1.5rem" }}>
               <div style={{ width: 28, height: 3, borderRadius: 1, background: "#009246" }} />

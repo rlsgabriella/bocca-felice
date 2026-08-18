@@ -53,7 +53,7 @@ export function Hero() {
           </span>
 
           {/* Imagem mobile */}
-          <div className="mt-5 mb-6 aspect-16/10 w-full overflow-hidden rounded-2xl bg-verde-medio lg:hidden">
+          <div className="mt-5 mb-6 aspect-16/10 w-full overflow-hidden rounded-2xl bg-verde-medio lg:hidden" style={{ boxShadow: "0 12px 32px rgba(201, 168, 76, 0.25), 0 4px 12px rgba(201, 168, 76, 0.15)" }}>
             <img
               src={fachada}
               alt="Bocca Felice — fachada do restaurante em Sobral"
@@ -65,13 +65,13 @@ export function Hero() {
           <h1 className="mt-6 font-display font-bold" style={{ letterSpacing: "-0.02em" }}>
             <span
               className="block text-creme"
-              style={{ fontSize: "clamp(1.6rem, 5vw, 3rem)", lineHeight: 1.05 }}
+              style={{ fontSize: "clamp(1.48rem, 4.6vw, 2.75rem)", lineHeight: 1.05 }}
             >
               Desde 2017 trazendo
             </span>
             <em
               className="mt-1 block font-script text-ouro not-italic"
-              style={{ fontSize: "clamp(1.5rem, 4.5vw, 2.8rem)", fontWeight: 400, lineHeight: 1.15 }}
+              style={{ fontSize: "clamp(1.65rem, 5vw, 3.1rem)", fontWeight: 400, lineHeight: 1.15 }}
             >
               a Itália para Sobral
             </em>
@@ -158,7 +158,7 @@ export function Hero() {
 
           <div
             className="aspect-3/4 w-full overflow-hidden rounded-[2.5rem] bg-verde-medio"
-            style={{ boxShadow: "0 32px 80px rgba(13,31,23,0.4)" }}
+            style={{ boxShadow: "0 32px 80px rgba(13,31,23,0.4), 0 12px 32px rgba(201, 168, 76, 0.25), 0 4px 12px rgba(201, 168, 76, 0.15)" }}
           >
             <img
               src={fachada}

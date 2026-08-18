@@ -32,10 +32,10 @@ export function Info() {
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
         <div className="revelar" data-revelar>
           <Eyebrow>Horários</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
+          <h2 className="mt-4 font-display text-[1.75rem] font-bold text-primary lg:text-[2.1rem]">
             Horários de
             <br />
-            <em className="font-script text-accent not-italic">funcionamento</em>
+            <em className="font-script text-accent not-italic" style={{ fontSize: "1.15em" }}>funcionamento</em>
           </h2>
           <div style={{ display: 'flex', gap: '0', margin: '0.75rem 0 0', width: '84px' }}>
             <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
@@ -60,8 +60,8 @@ export function Info() {
 
         <div className="revelar" data-revelar>
           <Eyebrow>Localização</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
-            Como nos <em className="font-script text-accent not-italic">encontrar</em>
+          <h2 className="mt-4 font-display text-[1.75rem] font-bold text-primary lg:text-[2.1rem]">
+            Como nos <em className="font-script text-accent not-italic" style={{ fontSize: "1.15em" }}>encontrar</em>
           </h2>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-verde-card">
             <iframe

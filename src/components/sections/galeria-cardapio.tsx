@@ -14,7 +14,7 @@ const LINK_CARDAPIO =
 
 const PRATOS = [
   {
-    img: gamberiParmegi,
+    img: gamberiNero,
     tag: "Massas",
     nome: "Gamberi Parmegi",
     desc: "Camarões selados, servidos com fettuccine ao molho de sua escolha (bechamel ou pomodoro), finalizado com parmesão vigor e salsinha.",
@@ -34,11 +34,11 @@ const PRATOS = [
   {
     img: risottoSalmone,
     tag: "Frutos do Mar",
-    nome: "Risotto Salmone Siciliano",
-    desc: "Risoto flambado ao vinho branco, emulsão de parmesão e manteiga com toque de limão siciliano, salmão em posta selado no azeite e crispy de alho poró.",
+    nome: "Risotto Nero Blanc ",
+    desc: "Risoto flambado ao vinho branco, finalizado com manteiga, alho negro e parmesão, servido com filé de peixe robalo e molho de vinho branco.",
   },
   {
-    img: gamberiNero,
+    img: gamberiParmegi,
     tag: "Especial",
     nome: "Gamberi Nero di Sépia",
     desc: "Camarões selados e flambados ao vinho branco, spaghetti nero di sépia, toque de bechamel e parmesão, tomates cerejas confeitados.",
@@ -92,7 +92,7 @@ export function GaleriaCardapio() {
 
   useEffect(() => {
     if (isPaused) return;
-    intervalRef.current = setInterval(goNext, 3500);
+    intervalRef.current = setInterval(goNext, 10000);
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
@@ -123,13 +123,13 @@ export function GaleriaCardapio() {
           className="font-display"
           style={{
             color: "var(--creme)",
-            fontSize: "clamp(1.75rem, 6vw, 2.8rem)",
+            fontSize: "clamp(1.6rem, 5.5vw, 2.6rem)",
             fontWeight: 700,
             marginTop: "0.5rem",
           }}
         >
           Nossa{" "}
-          <em className="font-script" style={{ fontStyle: "normal", color: "var(--ouro)" }}>
+          <em className="font-script" style={{ fontStyle: "normal", color: "var(--ouro)", fontSize: "1.15em" }}>
             Cucina
           </em>
         </h2>
@@ -167,7 +167,7 @@ export function GaleriaCardapio() {
             style={{
               display: "flex",
               alignItems: "stretch",
-              transition: isDragging ? "none" : "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              transition: isDragging ? "none" : "transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
               transform: isDragging
                 ? `translateX(calc(-${current * (100 / slidesVisiveis)}% + ${deltaX}px))`
                 : translateX,
@@ -231,7 +231,7 @@ export function GaleriaCardapio() {
                     <h3
                       className="font-display"
                       style={{
-                        fontSize: "1.3rem",
+                        fontSize: "1.2rem",
                         fontWeight: 700,
                         color: "var(--creme)",
                         marginBottom: "0.6rem",

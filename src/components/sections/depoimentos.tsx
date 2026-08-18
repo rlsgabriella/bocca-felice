@@ -23,7 +23,7 @@ function Card({ d }: { d: Depoimento }) {
       }}
     >
       <span
-        className="font-display text-5xl leading-none"
+        className="font-display text-[2.8rem] leading-none"
         style={{ color: "var(--color-ouro)", opacity: 0.35 }}
       >
         &ldquo;
@@ -96,7 +96,7 @@ export function Depoimentos() {
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(next, 5000);
+    const id = setInterval(next, 10000);
     return () => clearInterval(id);
   }, [paused, next]);
 
@@ -105,8 +105,8 @@ export function Depoimentos() {
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
         <div className="revelar text-center" data-revelar>
           <Eyebrow>Testimonianze</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-bold text-primary lg:text-4xl">
-            O que nossos <em className="font-script text-accent not-italic">clientes</em> dizem
+          <h2 className="mt-4 font-display text-[1.75rem] font-bold text-primary lg:text-[2.1rem]">
+            O que nossos <em className="font-script text-accent not-italic" style={{ fontSize: "1.15em" }}>clientes</em> dizem
           </h2>
           <div style={{ display: 'flex', gap: '0', margin: '0.75rem auto 0', width: '84px' }}>
             <div style={{ flex: 1, height: '2.5px', background: '#009246', borderRadius: '1px 0 0 1px' }} />
@@ -135,7 +135,7 @@ export function Depoimentos() {
                 transform: isDragging
                   ? `translateX(calc(-${page * 100}% + ${deltaX}px))`
                   : `translateX(-${page * 100}%)`,
-                transition: isDragging ? "none" : "transform 0.5s ease-in-out",
+                transition: isDragging ? "none" : "transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
               }}
             >
               {Array.from({ length: pageCount }, (_, i) => (
