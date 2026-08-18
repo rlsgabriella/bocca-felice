@@ -1,11 +1,46 @@
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useVideoVisibility } from "@/hooks/useVideoVisibility";
 import chefThyago from "@/assets/images/chef-thyago.jpg";
 import video360 from "@/assets/images/BOCA_FELICE_web.mp4";
 
 function Eyebrow({ children }: { children: string }) {
   return (
     <span className="font-display italic text-[0.7rem] tracking-[0.28em] text-accent uppercase">{children}</span>
+  );
+}
+
+function InstitucionalVideo() {
+  const videoRef = useVideoVisibility({ threshold: 0.5, resumeOnVisible: true });
+  return (
+    <video
+      ref={videoRef}
+      controls
+      autoPlay
+      playsInline
+      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+    >
+      <source src="/videos/institucional.mp4" type="video/mp4" />
+    </video>
+  );
+}
+
+function Video360() {
+  const videoRef = useVideoVisibility({ threshold: 0.5 });
+  return (
+    <video
+      ref={videoRef}
+      src={video360}
+      controls
+      playsInline
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        objectPosition: "center",
+        display: "block",
+      }}
+    />
   );
 }
 
@@ -127,12 +162,7 @@ function VideoPlayer() {
                   </div>
                 </div>
               ) : (
-                <video
-                  controls autoPlay playsInline
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                >
-                  <source src="/videos/institucional.mp4" type="video/mp4" />
-                </video>
+                <InstitucionalVideo />
               )}
             </div>
 
@@ -170,18 +200,7 @@ function VideoPlayer() {
               position: "relative",
               boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.15)",
             }}>
-              <video
-                src={video360}
-                controls
-                playsInline
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  display: "block",
-                }}
-              />
+              <Video360 />
             </div>
 
             <p style={{

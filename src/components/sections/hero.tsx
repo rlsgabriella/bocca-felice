@@ -58,7 +58,7 @@ export function Hero() {
               src={fachada}
               alt="Bocca Felice — fachada do restaurante em Sobral"
               className="size-full object-cover"
-              style={{ objectPosition: "center 55%" }}
+              style={{ objectPosition: "center bottom" }}
             />
           </div>
 
