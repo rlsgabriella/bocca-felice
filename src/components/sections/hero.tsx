@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import fachada from "@/assets/images/restaurante-fachada.jpeg";
+import posterMobile from "@/assets/images/poster.jpg";
 import chefThyago from "@/assets/images/chef-thyago.jpg";
 import { CONTATO, MENU_URL } from "@/data/info";
 
@@ -55,10 +56,10 @@ export function Hero() {
           {/* Imagem mobile */}
           <div className="mt-5 mb-6 aspect-16/10 w-full overflow-hidden rounded-2xl bg-verde-medio lg:hidden" style={{ boxShadow: "0 12px 32px rgba(201, 168, 76, 0.25), 0 4px 12px rgba(201, 168, 76, 0.15)" }}>
             <img
-              src={fachada}
-              alt="Bocca Felice — fachada do restaurante em Sobral"
+              src={posterMobile}
+              alt="Bocca Felice — frente do restaurante em Sobral"
               className="size-full object-cover"
-              style={{ objectPosition: "center top" }}
+              style={{ objectPosition: "center center" }}
             />
           </div>
 
